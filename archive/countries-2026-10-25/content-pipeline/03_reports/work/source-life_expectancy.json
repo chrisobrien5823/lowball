@@ -1,0 +1,175 @@
+{
+    "field":  "life_expectancy",
+    "source":  {
+                   "title":  "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+                   "publisher":  "World Health Organization, Global Health Observatory",
+                   "url":  "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq \u0027SEX_BTSX\u0027 and SpatialDimType eq \u0027COUNTRY\u0027",
+                   "year":  2023,
+                   "independentOf":  "WHO GHO life tables are produced by WHO itself (Global Health Estimates), not by the World Bank and not taken from UN World Population Prospects. Liechtenstein, which WHO does not cover, comes from Eurostat (demo_mlexpec), which compiles national registration data."
+               },
+    "values":  {
+                   "MDV":  {
+                               "value":  79.4
+                           },
+                   "GBR":  {
+                               "value":  80.7
+                           },
+                   "BHR":  {
+                               "value":  81.3
+                           },
+                   "CUB":  {
+                               "value":  77.2
+                           },
+                   "ATG":  {
+                               "value":  78.4
+                           },
+                   "LKA":  {
+                               "value":  76.2
+                           },
+                   "CYP":  {
+                               "value":  82
+                           },
+                   "NZL":  {
+                               "value":  80.7
+                           },
+                   "ISL":  {
+                               "value":  81.8
+                           },
+                   "CZE":  {
+                               "value":  79.7
+                           },
+                   "EST":  {
+                               "value":  79.3
+                           },
+                   "HRV":  {
+                               "value":  78.6
+                           },
+                   "DEU":  {
+                               "value":  81
+                           },
+                   "FIN":  {
+                               "value":  81.1
+                           },
+                   "GRC":  {
+                               "value":  81.9
+                           },
+                   "POL":  {
+                               "value":  78.1
+                           },
+                   "MAR":  {
+                               "value":  75.2
+                           },
+                   "SYC":  {
+                               "value":  75.5
+                           },
+                   "CPV":  {
+                               "value":  76.2
+                           },
+                   "MUS":  {
+                               "value":  73.6
+                           },
+                   "EGY":  {
+                               "value":  71.9
+                           },
+                   "STP":  {
+                               "value":  72.9
+                           },
+                   "DZA":  {
+                               "value":  77.8
+                           },
+                   "TUN":  {
+                               "value":  77.7
+                           },
+                   "URY":  {
+                               "value":  77.1
+                           },
+                   "PAN":  {
+                               "value":  79.3
+                           },
+                   "COL":  {
+                               "value":  78.2
+                           },
+                   "PER":  {
+                               "value":  78.4
+                           },
+                   "ARG":  {
+                               "value":  77.2
+                           },
+                   "ECU":  {
+                               "value":  77.6
+                           },
+                   "BRN":  {
+                               "value":  76.3
+                           },
+                   "THA":  {
+                               "value":  78.1
+                           },
+                   "MYS":  {
+                               "value":  74.6
+                           },
+                   "BGD":  {
+                               "value":  72.7
+                           },
+                   "VNM":  {
+                               "value":  74.3
+                           },
+                   "PRK":  {
+                               "value":  72.1
+                           },
+                   "BTN":  {
+                               "value":  75.3
+                           },
+                   "CHE":  {
+                               "value":  83.8
+                           },
+                   "JPN":  {
+                               "value":  83.9
+                           },
+                   "ESP":  {
+                               "value":  83.3
+                           },
+                   "ITA":  {
+                               "value":  82.9
+                           },
+                   "KOR":  {
+                               "value":  83.6
+                           },
+                   "MLT":  {
+                               "value":  82.5
+                           },
+                   "SOM":  {
+                               "value":  55.6
+                           },
+                   "SSD":  {
+                               "value":  61.7
+                           },
+                   "CAF":  {
+                               "value":  52.7
+                           },
+                   "MLI":  {
+                               "value":  64.4
+                           },
+                   "GIN":  {
+                               "value":  62.6
+                           },
+                   "BEN":  {
+                               "value":  65
+                           },
+                   "BFA":  {
+                               "value":  64.1
+                           },
+                   "NER":  {
+                               "value":  61.2
+                           },
+                   "SLE":  {
+                               "value":  62.4
+                           },
+                   "CIV":  {
+                               "value":  65.3
+                           },
+                   "LIE":  {
+                               "value":  83.8,
+                               "url":  "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_mlexpec?geo=LI\u0026sex=T\u0026age=Y_LT1\u0026time=2023\u0026unit=YR\u0026format=JSON"
+                           }
+               }
+}

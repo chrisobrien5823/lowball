@@ -1,0 +1,146 @@
+{
+  "_about": "Which players or teams count for a question. A group is a set of rows from one dataset chosen by plain rules, written so a player can predict them. The label finishes the sentence \"X isn't ___\" when someone names a real player or team outside the group. Templates take a season, so \"hitters-2019\" is the 2019 hitters group.",
+  "groups": {
+    "hof-hitters": {
+      "dataset": "lahman-career",
+      "noun": "player",
+      "label": "a Hall of Fame hitter",
+      "rule": "Inducted into the Hall of Fame as a player, debuted in 1901 or later and played only in the American and National Leagues, with at least 2,000 career at-bats.",
+      "where": [
+        {
+          "field": "hof",
+          "op": "=",
+          "value": 1
+        },
+        {
+          "field": "modern",
+          "op": "=",
+          "value": 1
+        },
+        {
+          "field": "ab",
+          "op": ">=",
+          "value": 2000
+        }
+      ]
+    },
+    "hof-pitchers": {
+      "dataset": "lahman-career",
+      "noun": "player",
+      "label": "a Hall of Fame pitcher",
+      "rule": "Inducted into the Hall of Fame as a player, debuted in 1901 or later and played only in the American and National Leagues, with at least 300 games pitched and fewer than 2,000 career at-bats.",
+      "where": [
+        {
+          "field": "hof",
+          "op": "=",
+          "value": 1
+        },
+        {
+          "field": "modern",
+          "op": "=",
+          "value": 1
+        },
+        {
+          "field": "p_g",
+          "op": ">=",
+          "value": 300
+        },
+        {
+          "field": "ab",
+          "op": "<",
+          "value": 2000
+        }
+      ]
+    },
+    "hits-2000": {
+      "dataset": "lahman-career",
+      "noun": "player",
+      "label": "a player with 2,000 or more career hits",
+      "rule": "Debuted in 1901 or later, played only in the American and National Leagues, and has at least 2,000 career hits.",
+      "where": [
+        {
+          "field": "modern",
+          "op": "=",
+          "value": 1
+        },
+        {
+          "field": "h",
+          "op": ">=",
+          "value": 2000
+        }
+      ]
+    },
+    "wins-150": {
+      "dataset": "lahman-career",
+      "noun": "player",
+      "label": "a pitcher with 150 or more career wins",
+      "rule": "Debuted in 1901 or later, played only in the American and National Leagues, and has at least 150 career pitching wins.",
+      "where": [
+        {
+          "field": "modern",
+          "op": "=",
+          "value": 1
+        },
+        {
+          "field": "p_w",
+          "op": ">=",
+          "value": 150
+        }
+      ]
+    }
+  },
+  "templates": [
+    {
+      "id": "hitters-{year}",
+      "dataset": "lahman-seasons",
+      "noun": "player",
+      "label": "a {year} hitter with 200 or more at-bats",
+      "rule": "Had at least 200 at-bats in the {year} regular season.",
+      "where": [
+        {
+          "field": "yearID",
+          "op": "=",
+          "value": "{year}"
+        },
+        {
+          "field": "ab",
+          "op": ">=",
+          "value": 200
+        }
+      ]
+    },
+    {
+      "id": "pitchers-{year}",
+      "dataset": "lahman-seasons",
+      "noun": "player",
+      "label": "a {year} pitcher with 50 or more innings",
+      "rule": "Pitched at least 50 innings in the {year} regular season.",
+      "where": [
+        {
+          "field": "yearID",
+          "op": "=",
+          "value": "{year}"
+        },
+        {
+          "field": "p_ip",
+          "op": ">=",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "id": "teams-{year}",
+      "dataset": "lahman-teams",
+      "noun": "team",
+      "label": "a {year} MLB team",
+      "rule": "Every team that played the {year} regular season.",
+      "where": [
+        {
+          "field": "yearID",
+          "op": "=",
+          "value": "{year}"
+        }
+      ]
+    }
+  ]
+}

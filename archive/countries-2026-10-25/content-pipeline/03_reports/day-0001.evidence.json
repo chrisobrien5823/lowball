@@ -1,0 +1,494 @@
+{
+  "day": 1,
+  "theme": "Island Life",
+  "instructions": "Fill secondSource for every check, and add adversarial findings. See .claude/skills/verify-day/SKILL.md.",
+  "questions": [
+    {
+      "id": "d1q1",
+      "prompt": "Name an island country with a population under 500,000",
+      "field": "population",
+      "unit": "people",
+      "source": "World Bank, Population, total (SP.POP.TOTL), 2023",
+      "checks": [
+        {
+          "id": "BRN",
+          "name": "Brunei",
+          "value": 458949,
+          "secondSource": {
+            "value": 484991,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "BHS",
+          "name": "Bahamas",
+          "value": 399440,
+          "secondSource": {
+            "value": 358508,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "ISL",
+          "name": "Iceland",
+          "value": 385663,
+          "secondSource": {
+            "value": 360872,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "CPV",
+          "name": "Cabo Verde",
+          "value": 522331,
+          "secondSource": {
+            "value": 603901,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "MDV",
+          "name": "Maldives",
+          "value": 525994,
+          "secondSource": {
+            "value": 389568,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "MLT",
+          "name": "Malta",
+          "value": 552747,
+          "secondSource": {
+            "value": 467138,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "missing-answer",
+          "text": "Small island territories are exactly what players reach for under 500,000 people, but many are not recognized at all and score 0 with no reason: Montserrat, Anguilla, Falkland Islands (Falklands), Saint Helena, Tokelau, Wallis and Futuna, Saint Barthelemy (St Barts), Saint Pierre and Miquelon, Pitcairn Islands, Norfolk Island, Martinique, Guadeloupe, Mayotte, Bonaire, Aland Islands. They also matter for d6q1/d6q2/d6q3 (tiny populations, areas and economies).",
+          "suggestion": "Add these to extras with reasons, e.g. {\"name\": \"Montserrat\", \"reason\": \"Montserrat is a British Overseas Territory, so it doesn't count as a country here.\"}; {\"name\": \"Falkland Islands\", \"aliases\": [\"Falklands\", \"Malvinas\", \"Islas Malvinas\"]}; Martinique/Guadeloupe/Mayotte/Reunion: \"an overseas department of France\".",
+          "blocking": false
+        },
+        {
+          "kind": "membership",
+          "text": "Cook Islands (~15k people) and Niue (~2k) are natural answers here, and they are recognized, but the reason shown is \"not covered by World Bank data\". That suggests they would count if the data existed. The actual rule is that they are self-governing states in free association with New Zealand and not UN members. The same misleading reason text is used for Vatican City, Taiwan and Western Sahara.",
+          "suggestion": "Reword the notInDataset reasons by the actual rule: \"Cook Islands is in free association with New Zealand and isn't a UN member state, so it doesn't count here.\" (same for Niue); Vatican City: \"a UN observer state, not a UN member\"; Taiwan: \"not a UN member state\"; Western Sahara: \"a disputed territory, not a UN member state\".",
+          "blocking": false
+        },
+        {
+          "kind": "missing-alias",
+          "text": "Typo tolerance is computed from min(name length, typed length), so dropping a letter from a 5-letter name gives a 4-letter input with zero tolerance. Players typing 'Palu', 'Naru', 'Smoa' or 'Tona' (for Palau, Nauru, Samoa, Tonga, all valid here) get unrecognized. The same goes for 'Chna'/'Inda' (d5q5, d7q1), 'Egyt', 'Japn', 'Qatr' and so on. The game promises forgiveness for names of 5+ letters.",
+          "suggestion": "In match.js base the tolerance on the canonical name's length (typoTolerance(n.length)) rather than Math.min(n.length, typed.length), or at least allow 1 edit when the canonical name has 5+ letters.",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "id": "d1q2",
+      "prompt": "Name an island country smaller than 1,000 km²",
+      "field": "area_km2",
+      "unit": "km²",
+      "source": "World Bank, Surface area (AG.SRF.TOTL.K2), 2023",
+      "checks": [
+        {
+          "id": "STP",
+          "name": "São Tomé and Príncipe",
+          "value": 960,
+          "secondSource": {
+            "value": 964,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "KIR",
+          "name": "Kiribati",
+          "value": 811,
+          "secondSource": {
+            "value": 726,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "BHR",
+          "name": "Bahrain",
+          "value": 800,
+          "secondSource": {
+            "value": 778,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "COM",
+          "name": "Comoros",
+          "value": 1861,
+          "secondSource": {
+            "value": 2235,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "MUS",
+          "name": "Mauritius",
+          "value": 2010,
+          "secondSource": {
+            "value": 1979,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "WSM",
+          "name": "Samoa",
+          "value": 2840,
+          "secondSource": {
+            "value": 2842,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": []
+    },
+    {
+      "id": "d1q3",
+      "prompt": "Name an island country with a life expectancy over 80 years",
+      "field": "life_expectancy",
+      "unit": "years",
+      "source": "World Bank, Life expectancy at birth, total (SP.DYN.LE00.IN), 2023",
+      "checks": [
+        {
+          "id": "MDV",
+          "name": "Maldives",
+          "value": 81,
+          "secondSource": {
+            "value": 79.4,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "GBR",
+          "name": "United Kingdom",
+          "value": 81.2,
+          "secondSource": {
+            "value": 80.7,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "BHR",
+          "name": "Bahrain",
+          "value": 81.3,
+          "secondSource": {
+            "value": 81.3,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "CUB",
+          "name": "Cuba",
+          "value": 78.1,
+          "secondSource": {
+            "value": 77.2,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "ATG",
+          "name": "Antigua and Barbuda",
+          "value": 77.6,
+          "secondSource": {
+            "value": 78.4,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "LKA",
+          "name": "Sri Lanka",
+          "value": 77.5,
+          "secondSource": {
+            "value": 76.2,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "CYP",
+          "name": "Cyprus",
+          "value": 81.6,
+          "secondSource": {
+            "value": 82,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "NZL",
+          "name": "New Zealand",
+          "value": 81.8,
+          "secondSource": {
+            "value": 80.7,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "ISL",
+          "name": "Iceland",
+          "value": 82.5,
+          "secondSource": {
+            "value": 81.8,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "membership",
+          "text": "Australia (life expectancy ~83) is one of the most obvious answers for an 'island country' with life expectancy over 80, and it is commonly called an island continent/country. It is rejected with 'Australia isn't an island country.' The group notes explain Denmark/Malaysia/etc. but say nothing about Australia.",
+          "suggestion": "Add to the island-nations notes and show as the reason: \"Australia is a continent, not an island, so it doesn't count here.\" Better still, put it in the prompt ('...island country (Australia doesn't count)...') so players aren't caught out on their only guess.",
+          "blocking": true
+        },
+        {
+          "kind": "missing-answer",
+          "text": "England, Scotland, Wales and Northern Ireland are not recognized at all (no alias, no extra). Many players will type 'England' for an island country with life expectancy over 80, and it scores 0 as unrecognized input.",
+          "suggestion": "Add \"England\", \"Scotland\", \"Wales\", \"Northern Ireland\" as aliases of GBR (scored as United Kingdom), or at minimum as extras with reason \"England is part of the United Kingdom - answer United Kingdom.\"",
+          "blocking": true
+        },
+        {
+          "kind": "membership",
+          "text": "Taiwan (life expectancy ~81) is widely regarded as an island country and is a strong answer here (also for d5q1-d5q4). It is rejected with the reason 'Taiwan is not covered by World Bank data'. Nothing in the prompt or label tells the player that only UN member states count.",
+          "suggestion": "State the rule where players see it (e.g. label 'an island UN member state' or a one-line 'UN member states only' in the help/prompt), and change the reason to \"Taiwan isn't a UN member state, so it doesn't count here.\"",
+          "blocking": true
+        },
+        {
+          "kind": "missing-alias",
+          "text": "'Republic of Ireland' and 'Eire' are not recognized (too far from 'Ireland' for typo tolerance). Ireland is a top answer here (life expectancy ~82).",
+          "suggestion": "Add aliases to IRL: \"Republic of Ireland\", \"Eire\", \"Éire\".",
+          "blocking": false
+        },
+        {
+          "kind": "missing-answer",
+          "text": "Famous sub-national islands are unrecognized: Hawaii (life expectancy ~80+), Tasmania, Sicily, Sardinia, Corsica, Crete, Bali, Zanzibar, Canary Islands. Players get 0 with no explanation.",
+          "suggestion": "Add extras with reasons such as \"Hawaii is a US state, so it doesn't count as a country here.\" and \"Sicily is part of Italy...\".",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "id": "d1q4",
+      "prompt": "Name an island country with a GDP per person under $10,000",
+      "field": "gdp_per_capita_usd",
+      "unit": "US$",
+      "source": "World Bank, GDP per capita (NY.GDP.PCAP.CD), 2023",
+      "checks": [
+        {
+          "id": "DMA",
+          "name": "Dominica",
+          "value": 9913,
+          "secondSource": {
+            "value": 8853,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "JAM",
+          "name": "Jamaica",
+          "value": 7542,
+          "secondSource": {
+            "value": 7755,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "MHL",
+          "name": "Marshall Islands",
+          "value": 6799,
+          "secondSource": {
+            "value": 6553,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "VCT",
+          "name": "Saint Vincent and the Grenadines",
+          "value": 10582,
+          "secondSource": {
+            "value": 9433,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "DOM",
+          "name": "Dominican Republic",
+          "value": 10630,
+          "secondSource": {
+            "value": 11280,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "MUS",
+          "name": "Mauritius",
+          "value": 11270,
+          "secondSource": {
+            "value": 11273,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "GRD",
+          "name": "Grenada",
+          "value": 11414,
+          "secondSource": {
+            "value": 11619,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "ambiguous-wording",
+          "text": "'GDP per person' can be read as nominal or PPP, and the two differ hugely (Sri Lanka ~$4k nominal vs ~$15k PPP, Jamaica ~$7k vs ~$12k). The data is nominal current US$. This affects every GDP and GDP-per-person question (d1q4, d2q3, d2q5, d3q4, d3q5, d4q4, d4q5, d5q4, d6q3, d6q5, d7q3, d7q5). It hurts most on 'over' lines, where PPP-minded players bust; see d6q5.",
+          "suggestion": "Reword the GDP prompts to say 'nominal', e.g. 'Name an island country with a GDP per person under $10,000 (nominal, US$)', and show the source/definition on the result screen.",
+          "blocking": false
+        },
+        {
+          "kind": "membership",
+          "text": "Cuba is in the group but has no figure, so a player typing it (a natural 'poorer island country' answer) gets 0 with 'Cuba has no figure for this in the source data.' The game does not warn about this beforehand. The same noData gap recurs in d4q4/d4q5 (Cuba) and d5q4 (North Korea).",
+          "suggestion": "Either fill missing values from a second source (UN/IMF estimates), or treat a noData answer as a free retry rather than a spent guess, or list the excluded countries under the prompt ('No data: Cuba').",
+          "blocking": false
+        }
+      ]
+    },
+    {
+      "id": "d1q5",
+      "prompt": "Name an island country with a population over 100 million",
+      "field": "population",
+      "unit": "people",
+      "source": "World Bank, Population, total (SP.POP.TOTL), 2023",
+      "checks": [
+        {
+          "id": "PHL",
+          "name": "Philippines",
+          "value": 114891199,
+          "secondSource": {
+            "value": 116434200,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "JPN",
+          "name": "Japan",
+          "value": 124516650,
+          "secondSource": {
+            "value": 123719238,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "IDN",
+          "name": "Indonesia",
+          "value": 281190067,
+          "secondSource": {
+            "value": 279476346,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "GBR",
+          "name": "United Kingdom",
+          "value": 68526000,
+          "secondSource": {
+            "value": 68138484,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "MDG",
+          "name": "Madagascar",
+          "value": 31195932,
+          "secondSource": {
+            "value": 28812195,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "LKA",
+          "name": "Sri Lanka",
+          "value": 22037000,
+          "secondSource": {
+            "value": 23326272,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "day": 2,
+  "theme": "Euro Trip",
+  "emoji": "🇪🇺",
+  "questions": [
+    { "group": "eu", "field": "population", "direction": "under", "limit": 4000000, "prompt": "Name an EU country with a population under 4 million" },
+    { "group": "eu", "field": "area_km2", "direction": "over", "limit": 300000, "prompt": "Name an EU country with a total area over 300,000 km²" },
+    { "group": "eu", "field": "gdp_per_capita_usd", "direction": "over", "limit": 50000, "prompt": "Name an EU country with a nominal GDP per person over $50,000" },
+    { "group": "eu", "field": "life_expectancy", "direction": "under", "limit": 80, "prompt": "Name an EU country with a life expectancy under 80 years" },
+    { "group": "eu", "field": "gdp_usd", "direction": "under", "limit": 100000000000, "prompt": "Name an EU country with a nominal GDP under $100 billion" }
+  ]
+}

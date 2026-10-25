@@ -1,0 +1,11 @@
+{
+  "day": 4,
+  "theme": "Across the Decades",
+  "questions": [
+    { "group": "hitters-2023", "field": "r", "direction": "over", "limit": 75, "prompt": "Name a hitter with over 75 runs scored, in 2023" },
+    { "group": "pitchers-2010", "field": "p_l", "direction": "under", "limit": 9, "prompt": "Name a pitcher with under 9 losses, in 2010" },
+    { "group": "hitters-2005", "field": "hr", "direction": "over", "limit": 20, "prompt": "Name a hitter with over 20 home runs, in 2005" },
+    { "group": "pitchers-2015", "field": "p_g", "direction": "over", "limit": 65, "prompt": "Name a pitcher with over 65 games pitched, in 2015" },
+    { "group": "hitters-2014", "field": "sb", "direction": "under", "limit": 8, "prompt": "Name a hitter with under 8 stolen bases, in 2014" }
+  ]
+}

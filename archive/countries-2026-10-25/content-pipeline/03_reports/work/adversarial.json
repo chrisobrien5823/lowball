@@ -1,0 +1,216 @@
+{
+  "d1q1": [
+    {
+      "kind": "missing-answer",
+      "text": "Small island territories are exactly what players reach for under 500,000 people, but many are not recognized at all and score 0 with no reason: Montserrat, Anguilla, Falkland Islands (Falklands), Saint Helena, Tokelau, Wallis and Futuna, Saint Barthelemy (St Barts), Saint Pierre and Miquelon, Pitcairn Islands, Norfolk Island, Martinique, Guadeloupe, Mayotte, Bonaire, Aland Islands. They also matter for d6q1/d6q2/d6q3 (tiny populations, areas and economies).",
+      "suggestion": "Add these to extras with reasons, e.g. {\"name\": \"Montserrat\", \"reason\": \"Montserrat is a British Overseas Territory, so it doesn't count as a country here.\"}; {\"name\": \"Falkland Islands\", \"aliases\": [\"Falklands\", \"Malvinas\", \"Islas Malvinas\"]}; Martinique/Guadeloupe/Mayotte/Reunion: \"an overseas department of France\".",
+      "blocking": false
+    },
+    {
+      "kind": "membership",
+      "text": "Cook Islands (~15k people) and Niue (~2k) are natural answers here, and they are recognized, but the reason shown is \"not covered by World Bank data\". That suggests they would count if the data existed. The actual rule is that they are self-governing states in free association with New Zealand and not UN members. The same misleading reason text is used for Vatican City, Taiwan and Western Sahara.",
+      "suggestion": "Reword the notInDataset reasons by the actual rule: \"Cook Islands is in free association with New Zealand and isn't a UN member state, so it doesn't count here.\" (same for Niue); Vatican City: \"a UN observer state, not a UN member\"; Taiwan: \"not a UN member state\"; Western Sahara: \"a disputed territory, not a UN member state\".",
+      "blocking": false
+    },
+    {
+      "kind": "missing-alias",
+      "text": "Typo tolerance is computed from min(name length, typed length), so dropping a letter from a 5-letter name gives a 4-letter input with zero tolerance. Players typing 'Palu', 'Naru', 'Smoa' or 'Tona' (for Palau, Nauru, Samoa, Tonga, all valid here) get unrecognized. The same goes for 'Chna'/'Inda' (d5q5, d7q1), 'Egyt', 'Japn', 'Qatr' and so on. The game promises forgiveness for names of 5+ letters.",
+      "suggestion": "In match.js base the tolerance on the canonical name's length (typoTolerance(n.length)) rather than Math.min(n.length, typed.length), or at least allow 1 edit when the canonical name has 5+ letters.",
+      "blocking": false
+    }
+  ],
+  "d1q3": [
+    {
+      "kind": "membership",
+      "text": "Australia (life expectancy ~83) is one of the most obvious answers for an 'island country' with life expectancy over 80, and it is commonly called an island continent/country. It is rejected with 'Australia isn't an island country.' The group notes explain Denmark/Malaysia/etc. but say nothing about Australia.",
+      "suggestion": "Add to the island-nations notes and show as the reason: \"Australia is a continent, not an island, so it doesn't count here.\" Better still, put it in the prompt ('...island country (Australia doesn't count)...') so players aren't caught out on their only guess.",
+      "blocking": true
+    },
+    {
+      "kind": "missing-answer",
+      "text": "England, Scotland, Wales and Northern Ireland are not recognized at all (no alias, no extra). Many players will type 'England' for an island country with life expectancy over 80, and it scores 0 as unrecognized input.",
+      "suggestion": "Add \"England\", \"Scotland\", \"Wales\", \"Northern Ireland\" as aliases of GBR (scored as United Kingdom), or at minimum as extras with reason \"England is part of the United Kingdom - answer United Kingdom.\"",
+      "blocking": true
+    },
+    {
+      "kind": "membership",
+      "text": "Taiwan (life expectancy ~81) is widely regarded as an island country and is a strong answer here (also for d5q1-d5q4). It is rejected with the reason 'Taiwan is not covered by World Bank data'. Nothing in the prompt or label tells the player that only UN member states count.",
+      "suggestion": "State the rule where players see it (e.g. label 'an island UN member state' or a one-line 'UN member states only' in the help/prompt), and change the reason to \"Taiwan isn't a UN member state, so it doesn't count here.\"",
+      "blocking": true
+    },
+    {
+      "kind": "missing-alias",
+      "text": "'Republic of Ireland' and 'Eire' are not recognized (too far from 'Ireland' for typo tolerance). Ireland is a top answer here (life expectancy ~82).",
+      "suggestion": "Add aliases to IRL: \"Republic of Ireland\", \"Eire\", \"Éire\".",
+      "blocking": false
+    },
+    {
+      "kind": "missing-answer",
+      "text": "Famous sub-national islands are unrecognized: Hawaii (life expectancy ~80+), Tasmania, Sicily, Sardinia, Corsica, Crete, Bali, Zanzibar, Canary Islands. Players get 0 with no explanation.",
+      "suggestion": "Add extras with reasons such as \"Hawaii is a US state, so it doesn't count as a country here.\" and \"Sicily is part of Italy...\".",
+      "blocking": false
+    }
+  ],
+  "d1q4": [
+    {
+      "kind": "ambiguous-wording",
+      "text": "'GDP per person' can be read as nominal or PPP, and the two differ hugely (Sri Lanka ~$4k nominal vs ~$15k PPP, Jamaica ~$7k vs ~$12k). The data is nominal current US$. This affects every GDP and GDP-per-person question (d1q4, d2q3, d2q5, d3q4, d3q5, d4q4, d4q5, d5q4, d6q3, d6q5, d7q3, d7q5). It hurts most on 'over' lines, where PPP-minded players bust; see d6q5.",
+      "suggestion": "Reword the GDP prompts to say 'nominal', e.g. 'Name an island country with a GDP per person under $10,000 (nominal, US$)', and show the source/definition on the result screen.",
+      "blocking": false
+    },
+    {
+      "kind": "membership",
+      "text": "Cuba is in the group but has no figure, so a player typing it (a natural 'poorer island country' answer) gets 0 with 'Cuba has no figure for this in the source data.' The game does not warn about this beforehand. The same noData gap recurs in d4q4/d4q5 (Cuba) and d5q4 (North Korea).",
+      "suggestion": "Either fill missing values from a second source (UN/IMF estimates), or treat a noData answer as a free retry rather than a spent guess, or list the excluded countries under the prompt ('No data: Cuba').",
+      "blocking": false
+    }
+  ],
+  "d2q1": [
+    {
+      "kind": "missing-alias",
+      "text": "'Slovania', a common misspelling of Slovenia (population ~2.1M, a valid answer), is exactly 1 edit from both Slovenia and Slovakia. The matcher treats the tie as ambiguous and returns unrecognized.",
+      "suggestion": "Add \"Slovania\" as an alias of SVN.",
+      "blocking": false
+    }
+  ],
+  "d2q2": [
+    {
+      "kind": "ambiguous-wording",
+      "text": "'bigger than 300,000 km²' doesn't say land or total area. The data is World Bank surface area (land + inland water). Italy is ~302k total but ~295k land, and Poland is ~313k vs ~306k, so the closest answers to the line depend on the reading. The same applies to d7q2, where India is 3.29M km² total but ~2.97M km² land.",
+      "suggestion": "Say 'total area' in all area prompts, e.g. 'Name an EU country with a total area (incl. lakes and rivers) over 300,000 km²'.",
+      "blocking": false
+    }
+  ],
+  "d2q4": [
+    {
+      "kind": "missing-alias",
+      "text": "'Czech' and 'Czech Rep' are not recognized. 'Czech' is 2 edits from 'Czechia', beyond the 1-typo tolerance for that length. Czechia (life expectancy ~79-80) is a plausible answer for under 80.",
+      "suggestion": "Add aliases to CZE: \"Czech\", \"Czech Rep\". Consider \"Slovak\" for SVK too.",
+      "blocking": false
+    }
+  ],
+  "d3q1": [
+    {
+      "kind": "missing-alias",
+      "text": "'Democratic Republic of Congo' (without 'the'), 'Dem Rep Congo' and 'Republic of Congo' are all unrecognized. Dropping 'the' is 4 edits away, beyond tolerance. DR Congo (~100M+) is one of only four answers to this question, and 'Democratic Republic of Congo' is probably the most common way to write it.",
+      "suggestion": "Add to COD: \"Democratic Republic of Congo\", \"Dem Rep Congo\", \"DR of Congo\", \"Congo DR\". Add to COG: \"Republic of Congo\". Alternatively, have normalize() drop the word 'the' everywhere, not just at the start.",
+      "blocking": true
+    },
+    {
+      "kind": "missing-alias",
+      "text": "Bare 'Congo' is an alias of the Republic of the Congo (~6M), but many players say 'Congo' meaning DR Congo. On this question a player meaning the DRC gets matched to the RoC and busts.",
+      "suggestion": "Remove \"Congo\" from COG's aliases and make it an extra that tells the player 'Which Congo? Type DR Congo or Republic of the Congo', ideally without consuming the guess. At minimum, show the matched full name before scoring.",
+      "blocking": true
+    },
+    {
+      "kind": "missing-alias",
+      "text": "'Nigera', a very common misspelling of Nigeria (the top answer here), is exactly 1 edit from both Nigeria and Niger. The tie returns unrecognized, so the player scores 0 despite the promised typo forgiveness. The same tie mechanism kills 'Brundi' (Burundi vs Brunei, matters for d3q2), 'Uwanda' (Rwanda vs Uganda) and 'Nambia' (Namibia vs Gambia/Zambia).",
+      "suggestion": "Add aliases \"Nigera\" (NGA), \"Brundi\" (BDI), \"Nambia\" (NAM). Better: break fuzzy ties by preferring the candidate with the same first letters/length, or the longer name when the input is longer than the shorter candidate.",
+      "blocking": true
+    }
+  ],
+  "d3q2": [
+    {
+      "kind": "missing-answer",
+      "text": "Small African places that players may type are unrecognized: Reunion, Mayotte, Zanzibar, Saint Helena, Canary Islands, Ceuta, Melilla, Somaliland. Western Sahara is recognized but shows the misleading 'not covered by World Bank data' reason (see d1q1).",
+      "suggestion": "Add extras: Reunion/Mayotte (\"an overseas department of France\"), Zanzibar (\"part of Tanzania\"), Saint Helena (\"a British Overseas Territory\"), Canary Islands/Ceuta/Melilla (\"part of Spain\"), Somaliland (\"not a UN member state; internationally part of Somalia\").",
+      "blocking": false
+    }
+  ],
+  "d3q4": [
+    {
+      "kind": "membership",
+      "text": "Eritrea (~$2B) and South Sudan (~$5B) are among the most obvious 'small African economy' answers, but both are noData. They get 0 with 'has no figure for this in the source data', which a player who answered correctly will feel cheated by. The same pair is noData in d3q5.",
+      "suggestion": "Fill Eritrea/South Sudan GDP from IMF WEO or UN estimates, or make noData answers a free retry, or print 'No data: Eritrea, South Sudan' under the prompt.",
+      "blocking": true
+    },
+    {
+      "kind": "missing-alias",
+      "text": "'Burkina' (common shorthand for Burkina Faso, which sits near this $20B line) is unrecognized.",
+      "suggestion": "Add alias \"Burkina\" to BFA. Also consider \"Guinea-Conakry\"/\"Guinea Conakry\" for GIN.",
+      "blocking": false
+    }
+  ],
+  "d4q1": [
+    {
+      "kind": "missing-answer",
+      "text": "French Guiana, Martinique, Guadeloupe, Falkland Islands/Malvinas, Anguilla, Montserrat, Bonaire and Saint Barthelemy are unrecognized (0, no reason), and all are small-population Latin American/Caribbean places. Bare 'Guiana' even fuzzy-matches Guyana. Puerto Rico and other territories are handled correctly.",
+      "suggestion": "Add extras: French Guiana/Martinique/Guadeloupe (\"an overseas department of France\"), Falkland Islands with aliases Falklands/Malvinas (\"a British Overseas Territory\"), Anguilla/Montserrat (\"a British Overseas Territory\"), Bonaire (\"part of the Netherlands\"), Saint Barthelemy (\"a French overseas collectivity\").",
+      "blocking": false
+    },
+    {
+      "kind": "missing-alias",
+      "text": "'Salvador' (common shorthand for El Salvador, ~6.3M, a valid answer) is unrecognized.",
+      "suggestion": "Add alias \"Salvador\" to SLV.",
+      "blocking": false
+    }
+  ],
+  "d4q5": [
+    {
+      "kind": "missing-alias",
+      "text": "'Dominican' fuzzy-matches Dominica (1 edit), not the Dominican Republic, and 'Dom Rep' is unrecognized. The Dominican Republic (~$120B) is a valid answer to 'GDP over $100 billion', but a player who types 'Dominican' is scored as Dominica (~$0.6B) and busts.",
+      "suggestion": "Add aliases to DOM: \"Dominican\", \"Dom Rep\", \"DR\", \"Dominican Rep\".",
+      "blocking": true
+    }
+  ],
+  "d5q1": [
+    {
+      "kind": "missing-alias",
+      "text": "'S Korea', 'S. Korea', 'N Korea', 'N. Korea' and 'ROK' are unrecognized. North Korea (~26M) is a valid answer for under 30 million, and 'N Korea' is a natural way to type it in 20 seconds.",
+      "suggestion": "Add to KOR: \"S Korea\", \"ROK\". Add to PRK: \"N Korea\".",
+      "blocking": false
+    }
+  ],
+  "d5q3": [
+    {
+      "kind": "membership",
+      "text": "Iran (life expectancy ~77, valid here) and Afghanistan count as Southern Asia under the UN geoscheme. Many players treat Iran as Middle East/Western Asia and Afghanistan as Central Asia, and the notes only say Central and Western Asia are excluded. Players may dispute both inclusions, or think other Middle East countries should count too.",
+      "suggestion": "Add to the south-east-asia notes and help text: \"Iran and Afghanistan count as Southern Asia (UN geoscheme); Western Asia, e.g. Saudi Arabia, Israel, UAE, does not.\"",
+      "blocking": false
+    }
+  ],
+  "d6q1": [
+    {
+      "kind": "membership",
+      "text": "Vatican City is the textbook answer to 'a country with a population under 40,000' and to d6q2 'smaller than 500 km²'. The prompt just says 'a country', but Vatican City is rejected with 'not covered by World Bank data'. Players will feel cheated on both questions.",
+      "suggestion": "Reword d6q1 and d6q2 to 'Name a UN member state with...' (or add 'Vatican City doesn't count' to the prompt), and change the reason to \"Vatican City is a UN observer state, not a UN member, so it doesn't count here.\"",
+      "blocking": true
+    }
+  ],
+  "d6q5": [
+    {
+      "kind": "ambiguous-wording",
+      "text": "'GDP per person over $100,000' is where the nominal-vs-PPP ambiguity (see d1q4) really bites. Singapore and Qatar are well over $100k in widely quoted PPP rankings but well under it nominally, so a player who reads it as PPP busts with one of the most famous 'richest country' answers.",
+      "suggestion": "Reword to 'Name a country with a nominal GDP per person over $100,000 (current US$)'.",
+      "blocking": true
+    }
+  ],
+  "d7q2": [
+    {
+      "kind": "missing-answer",
+      "text": "'Antarctica' (14M km²) is unrecognized and scores 0 with no explanation. Some players will try it on a 'bigger than 3 million km²' question.",
+      "suggestion": "Add extra {\"name\": \"Antarctica\", \"reason\": \"Antarctica is a continent governed by treaty, not a country.\"}.",
+      "blocking": false
+    },
+    {
+      "kind": "ambiguous-wording",
+      "text": "Argentina officially gives its area as ~3.76M km² when its Antarctic claim and the Falklands are included, versus ~2.78M km² without them. Argentine players may confidently answer Argentina and bust.",
+      "suggestion": "Clarify the prompt, e.g. 'bigger than 3 million km² (total area, not counting territorial claims)'.",
+      "blocking": false
+    },
+    {
+      "kind": "missing-alias",
+      "text": "'Austrlia' and 'Austraia', plausible typos of Australia (a valid answer here), are 1 edit from both Australia and Austria. The tie returns unrecognized.",
+      "suggestion": "Add aliases \"Austrlia\" and \"Austraia\" to AUS, or apply the fuzzy tie-break suggested in d3q1.",
+      "blocking": false
+    }
+  ],
+  "d7q5": [
+    {
+      "kind": "membership",
+      "text": "Six group members have no figure: South Sudan, Yemen, Eritrea, Syria, North Korea and Cuba. South Sudan, Yemen, Eritrea and Syria are among the first answers players think of for 'GDP per person under $1,000', and a player who answers correctly gets 0 with 'has no figure for this in the source data'.",
+      "suggestion": "Fill these from IMF WEO/UN estimates for this question, or make noData answers a free retry, or list them under the prompt ('No data: South Sudan, Yemen, Eritrea, Syria, North Korea, Cuba').",
+      "blocking": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "day": 3,
+  "theme": "Middle Ground",
+  "emoji": "🧭",
+  "questions": [
+    { "group": "sovereign", "field": "population", "direction": "under", "limit": 2000000, "prompt": "Name a country with a population under 2 million" },
+    { "group": "sovereign", "field": "area_km2", "direction": "under", "limit": 60000, "prompt": "Name a country with a total area under 60,000 km²" },
+    { "group": "sovereign", "field": "life_expectancy", "direction": "under", "limit": 65.2, "prompt": "Name a country with a life expectancy under 65.2 years" },
+    { "group": "sovereign", "field": "gdp_usd", "direction": "under", "limit": 60000000000, "prompt": "Name a country with a nominal GDP under $60 billion" },
+    { "group": "sovereign", "field": "gdp_per_capita_usd", "direction": "over", "limit": 15000, "prompt": "Name a country with a nominal GDP per person over $15,000" }
+  ]
+}

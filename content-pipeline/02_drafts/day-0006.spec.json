@@ -1,0 +1,11 @@
+{
+  "day": 6,
+  "theme": "Old School, New School",
+  "questions": [
+    { "group": "hitters-2003", "field": "bb", "direction": "under", "limit": 50, "prompt": "Name a hitter with under 50 walks, in 2003" },
+    { "group": "pitchers-2025", "field": "p_sv", "direction": "over", "limit": 20, "prompt": "Name a pitcher with over 20 saves, in 2025" },
+    { "group": "hitters-2012", "field": "so", "direction": "over", "limit": 120, "prompt": "Name a hitter with over 120 strikeouts, in 2012" },
+    { "group": "pitchers-2006", "field": "p_ip", "direction": "over", "limit": 180, "prompt": "Name a pitcher with over 180 innings, in 2006" },
+    { "group": "hitters-2019", "field": "r", "direction": "under", "limit": 70, "prompt": "Name a hitter with under 70 runs scored, in 2019" }
+  ]
+}

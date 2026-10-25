@@ -1,0 +1,155 @@
+{
+  "id": "lahman-career",
+  "title": "Lahman Baseball Database: career totals",
+  "publisher": "SABR Lahman Baseball Database",
+  "license": "CC BY-SA 3.0 per earlier Lahman releases; the 2025 download page states none. Check sabr.org/lahman-database before launch.",
+  "year": 2025,
+  "yearLabel": "2025 edition",
+  "retrieved": "2026-10-25T16:41:23.802Z",
+  "sha256": "4dea7ea80631bfef435a186c21b4f92042b77d4d9cc432abf77c305f5dce3d49",
+  "key": "playerID",
+  "entity": "playerID",
+  "fields": {
+    "born": {
+      "code": "People.birthYear",
+      "label": "Birth year",
+      "unit": "year",
+      "format": "int",
+      "decimals": 0
+    },
+    "debut_year": {
+      "code": "People.debut",
+      "label": "Debut year",
+      "unit": "year",
+      "format": "int",
+      "decimals": 0
+    },
+    "final_year": {
+      "code": "Batting.yearID",
+      "label": "Final season",
+      "unit": "year",
+      "format": "int",
+      "decimals": 0
+    },
+    "modern": {
+      "code": "derived",
+      "label": "Whole career in the AL and NL since 1901",
+      "unit": "flag",
+      "format": "int",
+      "decimals": 0
+    },
+    "hof": {
+      "code": "HallOfFame.inducted",
+      "label": "Inducted into the Hall of Fame as a player",
+      "unit": "flag",
+      "format": "int",
+      "decimals": 0
+    },
+    "g": {
+      "code": "Batting.G",
+      "label": "Career games played",
+      "unit": "games",
+      "format": "int",
+      "decimals": 0
+    },
+    "ab": {
+      "code": "Batting.AB",
+      "label": "Career at-bats",
+      "unit": "at-bats",
+      "format": "int",
+      "decimals": 0
+    },
+    "r": {
+      "code": "Batting.R",
+      "label": "Career runs scored",
+      "unit": "runs",
+      "format": "int",
+      "decimals": 0
+    },
+    "h": {
+      "code": "Batting.H",
+      "label": "Career hits",
+      "unit": "hits",
+      "format": "int",
+      "decimals": 0
+    },
+    "hr": {
+      "code": "Batting.HR",
+      "label": "Career home runs",
+      "unit": "home runs",
+      "format": "int",
+      "decimals": 0
+    },
+    "rbi": {
+      "code": "Batting.RBI",
+      "label": "Career runs batted in",
+      "unit": "RBI",
+      "format": "int",
+      "decimals": 0
+    },
+    "sb": {
+      "code": "Batting.SB",
+      "label": "Career stolen bases",
+      "unit": "stolen bases",
+      "format": "int",
+      "decimals": 0
+    },
+    "bb": {
+      "code": "Batting.BB",
+      "label": "Career walks",
+      "unit": "walks",
+      "format": "int",
+      "decimals": 0
+    },
+    "so": {
+      "code": "Batting.SO",
+      "label": "Career strikeouts as a batter",
+      "unit": "strikeouts",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_g": {
+      "code": "Pitching.G",
+      "label": "Career games pitched",
+      "unit": "games",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_w": {
+      "code": "Pitching.W",
+      "label": "Career pitching wins",
+      "unit": "wins",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_l": {
+      "code": "Pitching.L",
+      "label": "Career pitching losses",
+      "unit": "losses",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_sv": {
+      "code": "Pitching.SV",
+      "label": "Career saves",
+      "unit": "saves",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_so": {
+      "code": "Pitching.SO",
+      "label": "Career strikeouts as a pitcher",
+      "unit": "strikeouts",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_ip": {
+      "code": "Pitching.IPouts",
+      "label": "Career innings pitched",
+      "unit": "innings",
+      "format": "int",
+      "decimals": 1
+    }
+  },
+  "urls": {}
+}

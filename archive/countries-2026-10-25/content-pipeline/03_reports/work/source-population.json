@@ -1,0 +1,156 @@
+{
+  "field": "population",
+  "source": {
+    "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+    "publisher": "U.S. Central Intelligence Agency (archived by the Internet Archive Wayback Machine)",
+    "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+    "year": 2023,
+    "independentOf": "CIA World Factbook population figures come from the U.S. Census Bureau International Database (IDB), which makes its own cohort-component estimates from national censuses and surveys. They are not taken from UN World Population Prospects, which is what World Bank SP.POP.TOTL is built on. The live Factbook was shut down in 2026 (cia.gov now redirects to a farewell page), so the Wayback Machine snapshot of the 2023 edition from 1 Dec 2023 was used. The Census IDB API needs a key, so it was not fetched directly. Values are July 2023 midyear estimates."
+  },
+  "values": {
+    "BRN": {
+      "value": 484991
+    },
+    "BHS": {
+      "value": 358508
+    },
+    "ISL": {
+      "value": 360872
+    },
+    "CPV": {
+      "value": 603901
+    },
+    "MDV": {
+      "value": 389568
+    },
+    "MLT": {
+      "value": 467138
+    },
+    "PHL": {
+      "value": 116434200
+    },
+    "JPN": {
+      "value": 123719238
+    },
+    "IDN": {
+      "value": 279476346
+    },
+    "GBR": {
+      "value": 68138484
+    },
+    "MDG": {
+      "value": 28812195
+    },
+    "LKA": {
+      "value": 23326272
+    },
+    "HRV": {
+      "value": 4169239
+    },
+    "LTU": {
+      "value": 2655755
+    },
+    "SVN": {
+      "value": 2099790
+    },
+    "IRL": {
+      "value": 5323991
+    },
+    "SVK": {
+      "value": 5425319
+    },
+    "FIN": {
+      "value": 5614571
+    },
+    "COD": {
+      "value": 111859928
+    },
+    "EGY": {
+      "value": 109546720
+    },
+    "ETH": {
+      "value": 116462712
+    },
+    "TZA": {
+      "value": 65642682
+    },
+    "ZAF": {
+      "value": 58048332
+    },
+    "KEN": {
+      "value": 57052004
+    },
+    "PRY": {
+      "value": 7439863
+    },
+    "NIC": {
+      "value": 6359689
+    },
+    "SLV": {
+      "value": 6602370
+    },
+    "HND": {
+      "value": 9571352
+    },
+    "CUB": {
+      "value": 10985974
+    },
+    "DOM": {
+      "value": 10790744
+    },
+    "NPL": {
+      "value": 30899443
+    },
+    "PRK": {
+      "value": 26072217
+    },
+    "MYS": {
+      "value": 34219975
+    },
+    "AFG": {
+      "value": 39232003
+    },
+    "KOR": {
+      "value": 51966948
+    },
+    "PAK": {
+      "value": 247653551
+    },
+    "CHN": {
+      "value": 1413142846
+    },
+    "BGD": {
+      "value": 167184465
+    },
+    "LIE": {
+      "value": 39993
+    },
+    "MCO": {
+      "value": 31597
+    },
+    "MHL": {
+      "value": 80966
+    },
+    "KNA": {
+      "value": 54817
+    },
+    "DMA": {
+      "value": 74656
+    },
+    "AND": {
+      "value": 85468
+    },
+    "BRA": {
+      "value": 218689757
+    },
+    "NGA": {
+      "value": 230842743
+    },
+    "RUS": {
+      "value": 141698923
+    },
+    "MEX": {
+      "value": 129875529
+    }
+  }
+}

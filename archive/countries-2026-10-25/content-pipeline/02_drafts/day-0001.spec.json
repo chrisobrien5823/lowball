@@ -1,0 +1,12 @@
+{
+  "day": 1,
+  "theme": "Island Life",
+  "emoji": "🏝️",
+  "questions": [
+    { "group": "island-nations", "field": "population", "direction": "under", "limit": 500000, "prompt": "Name an island country with a population under 500,000" },
+    { "group": "island-nations", "field": "area_km2", "direction": "under", "limit": 1000, "prompt": "Name an island country with a total area under 1,000 km²" },
+    { "group": "island-nations", "field": "life_expectancy", "direction": "over", "limit": 80, "prompt": "Name an island country with a life expectancy over 80 years" },
+    { "group": "island-nations", "field": "gdp_per_capita_usd", "direction": "under", "limit": 10000, "prompt": "Name an island country with a nominal GDP per person under $10,000" },
+    { "group": "island-nations", "field": "population", "direction": "over", "limit": 100000000, "prompt": "Name an island country with a population over 100 million" }
+  ]
+}

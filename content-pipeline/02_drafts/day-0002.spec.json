@@ -1,0 +1,11 @@
+{
+  "day": 2,
+  "theme": "Time Machine",
+  "questions": [
+    { "group": "pitchers-2007", "field": "p_sv", "direction": "over", "limit": 20, "prompt": "Name a pitcher with over 20 saves, in 2007" },
+    { "group": "hitters-2016", "field": "so", "direction": "under", "limit": 120, "prompt": "Name a hitter with under 120 strikeouts, in 2016" },
+    { "group": "hitters-2002", "field": "h", "direction": "over", "limit": 150, "prompt": "Name a hitter with over 150 hits, in 2002" },
+    { "group": "pitchers-2019", "field": "p_ip", "direction": "under", "limit": 120, "prompt": "Name a pitcher with under 120 innings, in 2019" },
+    { "group": "hitters-2011", "field": "bb", "direction": "over", "limit": 55, "prompt": "Name a hitter with over 55 walks, in 2011" }
+  ]
+}

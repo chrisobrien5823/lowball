@@ -1,0 +1,686 @@
+{
+  "day": 7,
+  "date": "2026-11-07",
+  "theme": "Big Picture",
+  "emoji": "🌐",
+  "finalizedAt": "2026-10-24T16:02:10.127Z",
+  "status": "flagged",
+  "questions": [
+    {
+      "id": "d7q1",
+      "prompt": "Name a country with a population over 200 million",
+      "direction": "over",
+      "limit": 200000000,
+      "unit": "people",
+      "format": "int",
+      "source": "World Bank, Population, total (SP.POP.TOTL), 2023",
+      "groupLabel": "a UN member state",
+      "best": {
+        "name": "Brazil",
+        "value": 211140729,
+        "score": 95
+      },
+      "checks": [
+        {
+          "id": "BRA",
+          "name": "Brazil",
+          "value": 211140729,
+          "secondSource": {
+            "value": 218689757,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 3.6%, without changing the result."
+        },
+        {
+          "id": "NGA",
+          "name": "Nigeria",
+          "value": 227882945,
+          "secondSource": {
+            "value": 230842743,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "PAK",
+          "name": "Pakistan",
+          "value": 247504495,
+          "secondSource": {
+            "value": 247653551,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "BGD",
+          "name": "Bangladesh",
+          "value": 171466990,
+          "secondSource": {
+            "value": 167184465,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 2.5%, without changing the result."
+        },
+        {
+          "id": "RUS",
+          "name": "Russia",
+          "value": 143826130,
+          "secondSource": {
+            "value": 141698923,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "MEX",
+          "name": "Mexico",
+          "value": 129739759,
+          "secondSource": {
+            "value": 129875529,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d7q2",
+      "prompt": "Name a country with a total area over 3 million km²",
+      "direction": "over",
+      "limit": 3000000,
+      "unit": "km²",
+      "format": "int",
+      "source": "World Bank, Surface area (AG.SRF.TOTL.K2), 2023",
+      "groupLabel": "a UN member state",
+      "best": {
+        "name": "India",
+        "value": 3287263,
+        "score": 91
+      },
+      "checks": [
+        {
+          "id": "IND",
+          "name": "India",
+          "value": 3287263,
+          "secondSource": {
+            "value": 3287263,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "AUS",
+          "name": "Australia",
+          "value": 7741220,
+          "secondSource": {
+            "value": 7692024,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "BRA",
+          "name": "Brazil",
+          "value": 8510420,
+          "secondSource": {
+            "value": 8510417,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "ARG",
+          "name": "Argentina",
+          "value": 2780400,
+          "secondSource": {
+            "value": 2796427,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "KAZ",
+          "name": "Kazakhstan",
+          "value": 2724902,
+          "secondSource": {
+            "value": 2724910,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "DZA",
+          "name": "Algeria",
+          "value": 2381740,
+          "secondSource": {
+            "value": 2381741,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "missing-answer",
+          "text": "'Antarctica' (14M km²) is unrecognized and scores 0 with no explanation. Some players will try it on a 'bigger than 3 million km²' question.",
+          "suggestion": "Add extra {\"name\": \"Antarctica\", \"reason\": \"Antarctica is a continent governed by treaty, not a country.\"}.",
+          "blocking": false,
+          "resolution": "Antarctica is recognized with a reason; the player can try again. Covered by tests/content.test.mjs."
+        },
+        {
+          "kind": "ambiguous-wording",
+          "text": "Argentina officially gives its area as ~3.76M km² when its Antarctic claim and the Falklands are included, versus ~2.78M km² without them. Argentine players may confidently answer Argentina and bust.",
+          "suggestion": "Clarify the prompt, e.g. 'bigger than 3 million km² (total area, not counting territorial claims)'.",
+          "blocking": false,
+          "resolution": ""
+        },
+        {
+          "kind": "missing-alias",
+          "text": "'Austrlia' and 'Austraia', plausible typos of Australia (a valid answer here), are 1 edit from both Australia and Austria. The tie returns unrecognized.",
+          "suggestion": "Add aliases \"Austrlia\" and \"Austraia\" to AUS, or apply the fuzzy tie-break suggested in d3q1.",
+          "blocking": false,
+          "resolution": "Typo ties now go to the name with a dropped letter (Austrlia → Australia). Covered by tests/content.test.mjs."
+        }
+      ],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d7q3",
+      "prompt": "Name a country with a nominal GDP over $1 trillion",
+      "direction": "over",
+      "limit": 1000000000000,
+      "unit": "US$",
+      "format": "usd-big",
+      "source": "World Bank, GDP (NY.GDP.MKTP.CD), 2023",
+      "groupLabel": "a UN member state",
+      "best": {
+        "name": "Netherlands",
+        "value": 1135475867551,
+        "score": 88
+      },
+      "checks": [
+        {
+          "id": "NLD",
+          "name": "Netherlands",
+          "value": 1135475867551,
+          "secondSource": {
+            "value": 1135803000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "TUR",
+          "name": "Türkiye",
+          "value": 1141242864657,
+          "secondSource": {
+            "value": 1153295000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "SAU",
+          "name": "Saudi Arabia",
+          "value": 1218584800000,
+          "secondSource": {
+            "value": 1218585000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "CHE",
+          "name": "Switzerland",
+          "value": 928435275852,
+          "secondSource": {
+            "value": 931970000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "POL",
+          "name": "Poland",
+          "value": 812451193396,
+          "secondSource": {
+            "value": 812959000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "BEL",
+          "name": "Belgium",
+          "value": 650779364364,
+          "secondSource": {
+            "value": 650967000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d7q4",
+      "prompt": "Name a country with a life expectancy under 60 years",
+      "direction": "under",
+      "limit": 60,
+      "unit": "years",
+      "format": "dec1",
+      "source": "World Bank, Life expectancy at birth, total (SP.DYN.LE00.IN), 2023",
+      "groupLabel": "a UN member state",
+      "best": {
+        "name": "Somalia",
+        "value": 58.8,
+        "score": 98
+      },
+      "checks": [
+        {
+          "id": "SOM",
+          "name": "Somalia",
+          "value": 58.8,
+          "secondSource": {
+            "value": 55.6,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "With the second source's figure, Central African Republic would be the best answer."
+        },
+        {
+          "id": "SSD",
+          "name": "South Sudan",
+          "value": 57.6,
+          "secondSource": {
+            "value": 61.7,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "CAF",
+          "name": "Central African Republic",
+          "value": 57.4,
+          "secondSource": {
+            "value": 52.7,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 8.2%, without changing the result."
+        },
+        {
+          "id": "MLI",
+          "name": "Mali",
+          "value": 60.4,
+          "secondSource": {
+            "value": 64.4,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 6.6%, without changing the result."
+        },
+        {
+          "id": "GIN",
+          "name": "Guinea",
+          "value": 60.7,
+          "secondSource": {
+            "value": 62.6,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 3.1%, without changing the result."
+        },
+        {
+          "id": "BEN",
+          "name": "Benin",
+          "value": 60.8,
+          "secondSource": {
+            "value": 65,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 6.9%, without changing the result."
+        },
+        {
+          "id": "BFA",
+          "name": "Burkina Faso",
+          "value": 61.1,
+          "secondSource": {
+            "value": 64.1,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 4.9%, without changing the result."
+        },
+        {
+          "id": "NER",
+          "name": "Niger",
+          "value": 61.2,
+          "secondSource": {
+            "value": 61.2,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "SLE",
+          "name": "Sierra Leone",
+          "value": 61.8,
+          "secondSource": {
+            "value": 62.4,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "CIV",
+          "name": "Côte d'Ivoire",
+          "value": 61.9,
+          "secondSource": {
+            "value": 65.3,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 5.5%, without changing the result."
+        }
+      ],
+      "adversarial": [],
+      "flags": [
+        "Somalia: With the second source's figure, Central African Republic would be the best answer.",
+        "South Sudan: The second source puts this answer on the other side of the line."
+      ],
+      "status": "flagged"
+    },
+    {
+      "id": "d7q5",
+      "prompt": "Name a country with a nominal GDP per person under $1,000",
+      "direction": "under",
+      "limit": 1000,
+      "unit": "US$",
+      "format": "usd",
+      "source": "World Bank, GDP per capita (NY.GDP.PCAP.CD), 2023",
+      "groupLabel": "a UN member state",
+      "best": {
+        "name": "Guinea-Bissau",
+        "value": 964,
+        "score": 96
+      },
+      "checks": [
+        {
+          "id": "GNB",
+          "name": "Guinea-Bissau",
+          "value": 964,
+          "secondSource": {
+            "value": 1035,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "TCD",
+          "name": "Chad",
+          "value": 950,
+          "secondSource": {
+            "value": 1040,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "LSO",
+          "name": "Lesotho",
+          "value": 921,
+          "secondSource": {
+            "value": 963,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 4.6%, without changing the result."
+        },
+        {
+          "id": "UGA",
+          "name": "Uganda",
+          "value": 1002,
+          "secondSource": {
+            "value": 1151,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 14.9%, without changing the result."
+        },
+        {
+          "id": "MLI",
+          "name": "Mali",
+          "value": 1042,
+          "secondSource": {
+            "value": 1045,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "ETH",
+          "name": "Ethiopia",
+          "value": 1056,
+          "secondSource": {
+            "value": 1549,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 46.7%, without changing the result."
+        },
+        {
+          "id": "RWA",
+          "name": "Rwanda",
+          "value": 1061,
+          "secondSource": {
+            "value": 1097,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 3.4%, without changing the result."
+        },
+        {
+          "id": "GMB",
+          "name": "Gambia",
+          "value": 883,
+          "secondSource": {
+            "value": 858,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 2.8%, without changing the result."
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "membership",
+          "text": "Six group members have no figure: South Sudan, Yemen, Eritrea, Syria, North Korea and Cuba. South Sudan, Yemen, Eritrea and Syria are among the first answers players think of for 'GDP per person under $1,000', and a player who answers correctly gets 0 with 'has no figure for this in the source data'.",
+          "suggestion": "Fill these from IMF WEO/UN estimates for this question, or make noData answers a free retry, or list them under the prompt ('No data: South Sudan, Yemen, Eritrea, Syria, North Korea, Cuba').",
+          "blocking": false,
+          "resolution": "Countries without a figure now let the player try again. Covered by tests/content.test.mjs."
+        }
+      ],
+      "flags": [
+        "Guinea-Bissau: The second source puts this answer on the other side of the line.",
+        "Chad: The second source puts this answer on the other side of the line."
+      ],
+      "status": "flagged"
+    }
+  ]
+}

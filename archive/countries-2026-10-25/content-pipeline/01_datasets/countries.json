@@ -1,0 +1,688 @@
+{
+  "_about": "Display names, aliases and how recognized non-countries are explained. Text only: no numbers live here. Rows not listed under names use their World Bank name. Everything in notSovereign, notInDataset and otherPlaces lets the player try again.",
+  "names": {
+    "ARE": {
+      "name": "United Arab Emirates",
+      "aliases": [
+        "UAE",
+        "Emirates"
+      ]
+    },
+    "ATG": {
+      "name": "Antigua and Barbuda",
+      "aliases": [
+        "Antigua"
+      ]
+    },
+    "BHS": {
+      "name": "Bahamas",
+      "aliases": [
+        "The Bahamas"
+      ]
+    },
+    "BIH": {
+      "name": "Bosnia and Herzegovina",
+      "aliases": [
+        "Bosnia",
+        "Bosnia-Herzegovina"
+      ]
+    },
+    "BRN": {
+      "name": "Brunei",
+      "aliases": [
+        "Brunei Darussalam"
+      ]
+    },
+    "CAF": {
+      "name": "Central African Republic",
+      "aliases": [
+        "CAR"
+      ]
+    },
+    "CIV": {
+      "name": "Côte d'Ivoire",
+      "aliases": [
+        "Ivory Coast"
+      ]
+    },
+    "COD": {
+      "name": "DR Congo",
+      "aliases": [
+        "Democratic Republic of the Congo",
+        "Congo-Kinshasa",
+        "DRC",
+        "Zaire",
+        "Democratic Republic of Congo",
+        "Dem Rep Congo",
+        "DR of Congo",
+        "Congo DR"
+      ]
+    },
+    "COG": {
+      "name": "Republic of the Congo",
+      "aliases": [
+        "Congo-Brazzaville",
+        "Republic of Congo",
+        "Congo Republic"
+      ]
+    },
+    "CPV": {
+      "name": "Cabo Verde",
+      "aliases": [
+        "Cape Verde"
+      ]
+    },
+    "CZE": {
+      "name": "Czechia",
+      "aliases": [
+        "Czech Republic",
+        "Czech",
+        "Czech Rep"
+      ]
+    },
+    "DOM": {
+      "name": "Dominican Republic",
+      "aliases": [
+        "Dominican",
+        "Dom Rep",
+        "Dominican Rep"
+      ]
+    },
+    "EGY": {
+      "name": "Egypt",
+      "aliases": [
+        "Arab Republic of Egypt"
+      ]
+    },
+    "FSM": {
+      "name": "Micronesia",
+      "aliases": [
+        "Federated States of Micronesia",
+        "FSM"
+      ]
+    },
+    "GBR": {
+      "name": "United Kingdom",
+      "aliases": [
+        "UK",
+        "Britain",
+        "Great Britain"
+      ]
+    },
+    "GMB": {
+      "name": "Gambia",
+      "aliases": [
+        "The Gambia"
+      ]
+    },
+    "GNB": {
+      "name": "Guinea-Bissau",
+      "aliases": []
+    },
+    "GNQ": {
+      "name": "Equatorial Guinea",
+      "aliases": []
+    },
+    "IRN": {
+      "name": "Iran",
+      "aliases": [
+        "Islamic Republic of Iran",
+        "Persia"
+      ]
+    },
+    "KGZ": {
+      "name": "Kyrgyzstan",
+      "aliases": [
+        "Kyrgyz Republic"
+      ]
+    },
+    "KNA": {
+      "name": "Saint Kitts and Nevis",
+      "aliases": [
+        "St Kitts and Nevis",
+        "St Kitts",
+        "Saint Kitts"
+      ]
+    },
+    "KOR": {
+      "name": "South Korea",
+      "aliases": [
+        "Korea",
+        "Republic of Korea",
+        "S Korea",
+        "ROK"
+      ]
+    },
+    "LAO": {
+      "name": "Laos",
+      "aliases": [
+        "Lao PDR",
+        "Lao"
+      ]
+    },
+    "LCA": {
+      "name": "Saint Lucia",
+      "aliases": [
+        "St Lucia"
+      ]
+    },
+    "MHL": {
+      "name": "Marshall Islands",
+      "aliases": []
+    },
+    "MKD": {
+      "name": "North Macedonia",
+      "aliases": [
+        "Macedonia"
+      ]
+    },
+    "MMR": {
+      "name": "Myanmar",
+      "aliases": [
+        "Burma"
+      ]
+    },
+    "NLD": {
+      "name": "Netherlands",
+      "aliases": [
+        "Holland"
+      ]
+    },
+    "NRU": {
+      "name": "Nauru",
+      "aliases": [
+        "Naoero"
+      ]
+    },
+    "PNG": {
+      "name": "Papua New Guinea",
+      "aliases": [
+        "PNG"
+      ]
+    },
+    "PRK": {
+      "name": "North Korea",
+      "aliases": [
+        "DPRK",
+        "Democratic People's Republic of Korea",
+        "N Korea"
+      ]
+    },
+    "RUS": {
+      "name": "Russia",
+      "aliases": [
+        "Russian Federation"
+      ]
+    },
+    "SLB": {
+      "name": "Solomon Islands",
+      "aliases": [
+        "Solomons"
+      ]
+    },
+    "SOM": {
+      "name": "Somalia",
+      "aliases": []
+    },
+    "STP": {
+      "name": "São Tomé and Príncipe",
+      "aliases": [
+        "Sao Tome"
+      ]
+    },
+    "SVK": {
+      "name": "Slovakia",
+      "aliases": [
+        "Slovak Republic",
+        "Slovak"
+      ]
+    },
+    "SWZ": {
+      "name": "Eswatini",
+      "aliases": [
+        "Swaziland"
+      ]
+    },
+    "SYR": {
+      "name": "Syria",
+      "aliases": [
+        "Syrian Arab Republic"
+      ]
+    },
+    "TLS": {
+      "name": "Timor-Leste",
+      "aliases": [
+        "East Timor"
+      ]
+    },
+    "TTO": {
+      "name": "Trinidad and Tobago",
+      "aliases": [
+        "Trinidad"
+      ]
+    },
+    "TUR": {
+      "name": "Türkiye",
+      "aliases": [
+        "Turkey"
+      ]
+    },
+    "USA": {
+      "name": "United States",
+      "aliases": [
+        "USA",
+        "US",
+        "America",
+        "United States of America"
+      ]
+    },
+    "VCT": {
+      "name": "Saint Vincent and the Grenadines",
+      "aliases": [
+        "St Vincent and the Grenadines",
+        "St Vincent",
+        "Saint Vincent"
+      ]
+    },
+    "VEN": {
+      "name": "Venezuela",
+      "aliases": []
+    },
+    "VNM": {
+      "name": "Vietnam",
+      "aliases": [
+        "Viet Nam"
+      ]
+    },
+    "YEM": {
+      "name": "Yemen",
+      "aliases": []
+    },
+    "IRL": {
+      "name": "Ireland",
+      "aliases": [
+        "Republic of Ireland",
+        "Eire"
+      ]
+    },
+    "SVN": {
+      "name": "Slovenia",
+      "aliases": [
+        "Slovania"
+      ]
+    },
+    "BFA": {
+      "name": "Burkina Faso",
+      "aliases": [
+        "Burkina"
+      ]
+    },
+    "SLV": {
+      "name": "El Salvador",
+      "aliases": [
+        "Salvador"
+      ]
+    },
+    "GIN": {
+      "name": "Guinea",
+      "aliases": [
+        "Guinea-Conakry"
+      ]
+    }
+  },
+  "notSovereign": {
+    "ABW": {
+      "name": "Aruba",
+      "reason": "a territory of the Netherlands"
+    },
+    "ASM": {
+      "name": "American Samoa",
+      "reason": "a US territory"
+    },
+    "BMU": {
+      "name": "Bermuda",
+      "reason": "a British Overseas Territory"
+    },
+    "CHI": {
+      "name": "Channel Islands",
+      "reason": "British Crown Dependencies",
+      "aliases": [
+        "Jersey",
+        "Guernsey"
+      ]
+    },
+    "CUW": {
+      "name": "Curaçao",
+      "reason": "a territory of the Netherlands"
+    },
+    "CYM": {
+      "name": "Cayman Islands",
+      "reason": "a British Overseas Territory"
+    },
+    "FRO": {
+      "name": "Faroe Islands",
+      "reason": "part of the Kingdom of Denmark",
+      "aliases": [
+        "Faroes"
+      ]
+    },
+    "GIB": {
+      "name": "Gibraltar",
+      "reason": "a British Overseas Territory"
+    },
+    "GRL": {
+      "name": "Greenland",
+      "reason": "part of the Kingdom of Denmark"
+    },
+    "GUM": {
+      "name": "Guam",
+      "reason": "a US territory"
+    },
+    "HKG": {
+      "name": "Hong Kong",
+      "reason": "a region of China"
+    },
+    "IMN": {
+      "name": "Isle of Man",
+      "reason": "a British Crown Dependency"
+    },
+    "MAC": {
+      "name": "Macao",
+      "reason": "a region of China",
+      "aliases": [
+        "Macau"
+      ]
+    },
+    "MAF": {
+      "name": "Saint Martin",
+      "reason": "a French overseas collectivity",
+      "aliases": [
+        "St Martin"
+      ]
+    },
+    "MNP": {
+      "name": "Northern Mariana Islands",
+      "reason": "a US territory"
+    },
+    "NCL": {
+      "name": "New Caledonia",
+      "reason": "a French territory"
+    },
+    "PRI": {
+      "name": "Puerto Rico",
+      "reason": "a US territory"
+    },
+    "PSE": {
+      "name": "Palestine",
+      "reason": "a UN observer state, not a UN member",
+      "aliases": [
+        "West Bank and Gaza",
+        "State of Palestine"
+      ]
+    },
+    "PYF": {
+      "name": "French Polynesia",
+      "reason": "a French territory",
+      "aliases": [
+        "Tahiti"
+      ]
+    },
+    "SXM": {
+      "name": "Sint Maarten",
+      "reason": "a territory of the Netherlands"
+    },
+    "TCA": {
+      "name": "Turks and Caicos Islands",
+      "reason": "a British Overseas Territory",
+      "aliases": [
+        "Turks and Caicos"
+      ]
+    },
+    "VGB": {
+      "name": "British Virgin Islands",
+      "reason": "a British Overseas Territory"
+    },
+    "VIR": {
+      "name": "US Virgin Islands",
+      "reason": "a US territory",
+      "aliases": [
+        "Virgin Islands"
+      ]
+    },
+    "XKX": {
+      "name": "Kosovo",
+      "reason": "not a UN member state"
+    }
+  },
+  "notInDataset": [
+    {
+      "name": "Vatican City",
+      "aliases": [
+        "Vatican",
+        "Holy See"
+      ],
+      "reason": "Vatican City is a UN observer state, not a member, so it doesn't count as a country here."
+    },
+    {
+      "name": "Taiwan",
+      "aliases": [
+        "Republic of China",
+        "ROC"
+      ],
+      "reason": "Taiwan isn't a UN member state, so it doesn't count as a country here."
+    },
+    {
+      "name": "Western Sahara",
+      "aliases": [],
+      "reason": "Western Sahara is a disputed territory, not a UN member state."
+    },
+    {
+      "name": "Cook Islands",
+      "aliases": [],
+      "reason": "The Cook Islands are in free association with New Zealand and aren't a UN member state."
+    },
+    {
+      "name": "Niue",
+      "aliases": [],
+      "reason": "Niue is in free association with New Zealand and isn't a UN member state."
+    },
+    {
+      "name": "Somaliland",
+      "aliases": [],
+      "reason": "Somaliland isn't recognized as a UN member state; it counts as part of Somalia."
+    }
+  ],
+  "otherPlaces": [
+    {
+      "name": "Congo",
+      "aliases": [],
+      "reason": "There are two Congos. Type DR Congo or Republic of the Congo."
+    },
+    {
+      "name": "England",
+      "aliases": [],
+      "reason": "England is part of the United Kingdom. Answer United Kingdom instead."
+    },
+    {
+      "name": "Scotland",
+      "aliases": [],
+      "reason": "Scotland is part of the United Kingdom. Answer United Kingdom instead."
+    },
+    {
+      "name": "Wales",
+      "aliases": [],
+      "reason": "Wales is part of the United Kingdom. Answer United Kingdom instead."
+    },
+    {
+      "name": "Northern Ireland",
+      "aliases": [],
+      "reason": "Northern Ireland is part of the United Kingdom. Answer United Kingdom instead."
+    },
+    {
+      "name": "Montserrat",
+      "aliases": [],
+      "reason": "Montserrat is a British Overseas Territory."
+    },
+    {
+      "name": "Anguilla",
+      "aliases": [],
+      "reason": "Anguilla is a British Overseas Territory."
+    },
+    {
+      "name": "Falkland Islands",
+      "aliases": [
+        "Falklands",
+        "Malvinas"
+      ],
+      "reason": "The Falkland Islands are a British Overseas Territory."
+    },
+    {
+      "name": "Saint Helena",
+      "aliases": [
+        "St Helena"
+      ],
+      "reason": "Saint Helena is a British Overseas Territory."
+    },
+    {
+      "name": "Pitcairn Islands",
+      "aliases": [
+        "Pitcairn"
+      ],
+      "reason": "The Pitcairn Islands are a British Overseas Territory."
+    },
+    {
+      "name": "Tokelau",
+      "aliases": [],
+      "reason": "Tokelau is a territory of New Zealand."
+    },
+    {
+      "name": "Wallis and Futuna",
+      "aliases": [],
+      "reason": "Wallis and Futuna is a French overseas collectivity."
+    },
+    {
+      "name": "Norfolk Island",
+      "aliases": [],
+      "reason": "Norfolk Island is an Australian territory."
+    },
+    {
+      "name": "Christmas Island",
+      "aliases": [],
+      "reason": "Christmas Island is an Australian territory."
+    },
+    {
+      "name": "French Guiana",
+      "aliases": [
+        "Guiana"
+      ],
+      "reason": "French Guiana is an overseas department of France."
+    },
+    {
+      "name": "Martinique",
+      "aliases": [],
+      "reason": "Martinique is an overseas department of France."
+    },
+    {
+      "name": "Guadeloupe",
+      "aliases": [],
+      "reason": "Guadeloupe is an overseas department of France."
+    },
+    {
+      "name": "Réunion",
+      "aliases": [
+        "Reunion"
+      ],
+      "reason": "Réunion is an overseas department of France."
+    },
+    {
+      "name": "Mayotte",
+      "aliases": [],
+      "reason": "Mayotte is an overseas department of France."
+    },
+    {
+      "name": "Saint Barthélemy",
+      "aliases": [
+        "St Barts",
+        "Saint Barts"
+      ],
+      "reason": "Saint Barthélemy is a French overseas collectivity."
+    },
+    {
+      "name": "Saint Pierre and Miquelon",
+      "aliases": [],
+      "reason": "Saint Pierre and Miquelon is a French overseas collectivity."
+    },
+    {
+      "name": "Bonaire",
+      "aliases": [],
+      "reason": "Bonaire is part of the Netherlands."
+    },
+    {
+      "name": "Hawaii",
+      "aliases": [],
+      "reason": "Hawaii is a US state."
+    },
+    {
+      "name": "Tasmania",
+      "aliases": [],
+      "reason": "Tasmania is a state of Australia."
+    },
+    {
+      "name": "Sicily",
+      "aliases": [],
+      "reason": "Sicily is part of Italy."
+    },
+    {
+      "name": "Sardinia",
+      "aliases": [],
+      "reason": "Sardinia is part of Italy."
+    },
+    {
+      "name": "Corsica",
+      "aliases": [],
+      "reason": "Corsica is part of France."
+    },
+    {
+      "name": "Crete",
+      "aliases": [],
+      "reason": "Crete is part of Greece."
+    },
+    {
+      "name": "Bali",
+      "aliases": [],
+      "reason": "Bali is part of Indonesia."
+    },
+    {
+      "name": "Zanzibar",
+      "aliases": [],
+      "reason": "Zanzibar is part of Tanzania."
+    },
+    {
+      "name": "Canary Islands",
+      "aliases": [
+        "Canaries"
+      ],
+      "reason": "The Canary Islands are part of Spain."
+    },
+    {
+      "name": "Ceuta",
+      "aliases": [],
+      "reason": "Ceuta is part of Spain."
+    },
+    {
+      "name": "Melilla",
+      "aliases": [],
+      "reason": "Melilla is part of Spain."
+    },
+    {
+      "name": "Tibet",
+      "aliases": [],
+      "reason": "Tibet is part of China."
+    },
+    {
+      "name": "Antarctica",
+      "aliases": [],
+      "reason": "Antarctica is a continent governed by treaty, not a country."
+    }
+  ]
+}

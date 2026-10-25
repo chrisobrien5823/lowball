@@ -1,0 +1,85 @@
+{
+  "id": "lahman-teams",
+  "title": "Lahman Baseball Database: team seasons since 1969",
+  "publisher": "SABR Lahman Baseball Database",
+  "license": "CC BY-SA 3.0 per earlier Lahman releases; the 2025 download page states none. Check sabr.org/lahman-database before launch.",
+  "year": 2025,
+  "yearLabel": "2025 edition",
+  "retrieved": "2026-10-25T16:41:23.802Z",
+  "sha256": "ba4740db05cb08f3c99d6989d159ebbed103c511aac10ee75d87ff480688a3d0",
+  "key": "pk",
+  "entity": "teamID",
+  "fields": {
+    "yearID": {
+      "code": "Teams.yearID",
+      "label": "Season",
+      "unit": "year",
+      "format": "int",
+      "decimals": 0
+    },
+    "w": {
+      "code": "Teams.W",
+      "label": "Wins",
+      "unit": "wins",
+      "format": "int",
+      "decimals": 0
+    },
+    "l": {
+      "code": "Teams.L",
+      "label": "Losses",
+      "unit": "losses",
+      "format": "int",
+      "decimals": 0
+    },
+    "r": {
+      "code": "Teams.R",
+      "label": "Runs scored",
+      "unit": "runs",
+      "format": "int",
+      "decimals": 0
+    },
+    "ra": {
+      "code": "Teams.RA",
+      "label": "Runs allowed",
+      "unit": "runs",
+      "format": "int",
+      "decimals": 0
+    },
+    "hr": {
+      "code": "Teams.HR",
+      "label": "Home runs hit",
+      "unit": "home runs",
+      "format": "int",
+      "decimals": 0
+    },
+    "sb": {
+      "code": "Teams.SB",
+      "label": "Stolen bases",
+      "unit": "stolen bases",
+      "format": "int",
+      "decimals": 0
+    },
+    "so": {
+      "code": "Teams.SO",
+      "label": "Strikeouts by batters",
+      "unit": "strikeouts",
+      "format": "int",
+      "decimals": 0
+    },
+    "sv": {
+      "code": "Teams.SV",
+      "label": "Saves",
+      "unit": "saves",
+      "format": "int",
+      "decimals": 0
+    },
+    "attendance": {
+      "code": "Teams.attendance",
+      "label": "Home attendance",
+      "unit": "fans",
+      "format": "int",
+      "decimals": 0
+    }
+  },
+  "urls": {}
+}

@@ -1,0 +1,127 @@
+{
+  "id": "lahman-seasons",
+  "title": "Lahman Baseball Database: player seasons since 2000",
+  "publisher": "SABR Lahman Baseball Database",
+  "license": "CC BY-SA 3.0 per earlier Lahman releases; the 2025 download page states none. Check sabr.org/lahman-database before launch.",
+  "year": 2025,
+  "yearLabel": "2025 edition",
+  "retrieved": "2026-10-25T16:41:23.802Z",
+  "sha256": "c6c74289ebf85ef719a880925f5ca0a208b2a32f635ed3d9aebef0abfad3cdcd",
+  "key": "pk",
+  "entity": "playerID",
+  "fields": {
+    "yearID": {
+      "code": "Batting.yearID",
+      "label": "Season",
+      "unit": "year",
+      "format": "int",
+      "decimals": 0
+    },
+    "g": {
+      "code": "Batting.G",
+      "label": "Season games played",
+      "unit": "games",
+      "format": "int",
+      "decimals": 0
+    },
+    "ab": {
+      "code": "Batting.AB",
+      "label": "Season at-bats",
+      "unit": "at-bats",
+      "format": "int",
+      "decimals": 0
+    },
+    "r": {
+      "code": "Batting.R",
+      "label": "Season runs scored",
+      "unit": "runs",
+      "format": "int",
+      "decimals": 0
+    },
+    "h": {
+      "code": "Batting.H",
+      "label": "Season hits",
+      "unit": "hits",
+      "format": "int",
+      "decimals": 0
+    },
+    "hr": {
+      "code": "Batting.HR",
+      "label": "Season home runs",
+      "unit": "home runs",
+      "format": "int",
+      "decimals": 0
+    },
+    "rbi": {
+      "code": "Batting.RBI",
+      "label": "Season runs batted in",
+      "unit": "RBI",
+      "format": "int",
+      "decimals": 0
+    },
+    "sb": {
+      "code": "Batting.SB",
+      "label": "Season stolen bases",
+      "unit": "stolen bases",
+      "format": "int",
+      "decimals": 0
+    },
+    "bb": {
+      "code": "Batting.BB",
+      "label": "Season walks",
+      "unit": "walks",
+      "format": "int",
+      "decimals": 0
+    },
+    "so": {
+      "code": "Batting.SO",
+      "label": "Season strikeouts as a batter",
+      "unit": "strikeouts",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_g": {
+      "code": "Pitching.G",
+      "label": "Season games pitched",
+      "unit": "games",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_w": {
+      "code": "Pitching.W",
+      "label": "Season pitching wins",
+      "unit": "wins",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_l": {
+      "code": "Pitching.L",
+      "label": "Season pitching losses",
+      "unit": "losses",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_sv": {
+      "code": "Pitching.SV",
+      "label": "Season saves",
+      "unit": "saves",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_so": {
+      "code": "Pitching.SO",
+      "label": "Season strikeouts as a pitcher",
+      "unit": "strikeouts",
+      "format": "int",
+      "decimals": 0
+    },
+    "p_ip": {
+      "code": "Pitching.IPouts",
+      "label": "Season innings pitched",
+      "unit": "innings",
+      "format": "int",
+      "decimals": 1
+    }
+  },
+  "urls": {}
+}

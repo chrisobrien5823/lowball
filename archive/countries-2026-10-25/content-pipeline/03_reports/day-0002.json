@@ -1,0 +1,646 @@
+{
+  "day": 2,
+  "date": "2026-11-02",
+  "theme": "Euro Trip",
+  "emoji": "🇪🇺",
+  "finalizedAt": "2026-10-24T16:02:10.108Z",
+  "status": "flagged",
+  "questions": [
+    {
+      "id": "d2q1",
+      "prompt": "Name an EU country with a population under 4 million",
+      "direction": "under",
+      "limit": 4000000,
+      "unit": "people",
+      "format": "int",
+      "source": "World Bank, Population, total (SP.POP.TOTL), 2023",
+      "groupLabel": "an EU member state",
+      "best": {
+        "name": "Croatia",
+        "value": 3859686,
+        "score": 96
+      },
+      "checks": [
+        {
+          "id": "HRV",
+          "name": "Croatia",
+          "value": 3859686,
+          "secondSource": {
+            "value": 4169239,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "LTU",
+          "name": "Lithuania",
+          "value": 2871585,
+          "secondSource": {
+            "value": 2655755,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 7.5%, without changing the result."
+        },
+        {
+          "id": "SVN",
+          "name": "Slovenia",
+          "value": 2120461,
+          "secondSource": {
+            "value": 2099790,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "IRL",
+          "name": "Ireland",
+          "value": 5311538,
+          "secondSource": {
+            "value": 5323991,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "SVK",
+          "name": "Slovakia",
+          "value": 5426740,
+          "secondSource": {
+            "value": 5425319,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "FIN",
+          "name": "Finland",
+          "value": 5583911,
+          "secondSource": {
+            "value": 5614571,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "missing-alias",
+          "text": "'Slovania', a common misspelling of Slovenia (population ~2.1M, a valid answer), is exactly 1 edit from both Slovenia and Slovakia. The matcher treats the tie as ambiguous and returns unrecognized.",
+          "suggestion": "Add \"Slovania\" as an alias of SVN.",
+          "blocking": false,
+          "resolution": "Added alias Slovania. Covered by tests/content.test.mjs."
+        }
+      ],
+      "flags": [
+        "Croatia: The second source puts this answer on the other side of the line."
+      ],
+      "status": "flagged"
+    },
+    {
+      "id": "d2q2",
+      "prompt": "Name an EU country with a total area over 300,000 km²",
+      "direction": "over",
+      "limit": 300000,
+      "unit": "km²",
+      "format": "int",
+      "source": "World Bank, Surface area (AG.SRF.TOTL.K2), 2023",
+      "groupLabel": "an EU member state",
+      "best": {
+        "name": "Italy",
+        "value": 302070,
+        "score": 99
+      },
+      "checks": [
+        {
+          "id": "ITA",
+          "name": "Italy",
+          "value": 302070,
+          "secondSource": {
+            "value": 302068,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "POL",
+          "name": "Poland",
+          "value": 313930,
+          "secondSource": {
+            "value": 312679,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "FIN",
+          "name": "Finland",
+          "value": 338480,
+          "secondSource": {
+            "value": 336884,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "ROU",
+          "name": "Romania",
+          "value": 238400,
+          "secondSource": {
+            "value": 238398,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "GRC",
+          "name": "Greece",
+          "value": 131960,
+          "secondSource": {
+            "value": 131957,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "BGR",
+          "name": "Bulgaria",
+          "value": 110997,
+          "secondSource": {
+            "value": 110372,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "ambiguous-wording",
+          "text": "'bigger than 300,000 km²' doesn't say land or total area. The data is World Bank surface area (land + inland water). Italy is ~302k total but ~295k land, and Poland is ~313k vs ~306k, so the closest answers to the line depend on the reading. The same applies to d7q2, where India is 3.29M km² total but ~2.97M km² land.",
+          "suggestion": "Say 'total area' in all area prompts, e.g. 'Name an EU country with a total area (incl. lakes and rivers) over 300,000 km²'.",
+          "blocking": false,
+          "resolution": "All area prompts now say total area."
+        }
+      ],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d2q3",
+      "prompt": "Name an EU country with a nominal GDP per person over $50,000",
+      "direction": "over",
+      "limit": 50000,
+      "unit": "US$",
+      "format": "usd",
+      "source": "World Bank, GDP per capita (NY.GDP.PCAP.CD), 2023",
+      "groupLabel": "an EU member state",
+      "best": {
+        "name": "Finland",
+        "value": 52865,
+        "score": 95
+      },
+      "checks": [
+        {
+          "id": "FIN",
+          "name": "Finland",
+          "value": 52865,
+          "secondSource": {
+            "value": 53017,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "DEU",
+          "name": "Germany",
+          "value": 54777,
+          "secondSource": {
+            "value": 55256,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "SWE",
+          "name": "Sweden",
+          "value": 54950,
+          "secondSource": {
+            "value": 54872,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "FRA",
+          "name": "France",
+          "value": 44700,
+          "secondSource": {
+            "value": 44807,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "MLT",
+          "name": "Malta",
+          "value": 40933,
+          "secondSource": {
+            "value": 41732,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "ITA",
+          "name": "Italy",
+          "value": 39280,
+          "secondSource": {
+            "value": 39282,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "BEL",
+          "name": "Belgium",
+          "value": 55245,
+          "secondSource": {
+            "value": 55435,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "AUT",
+          "name": "Austria",
+          "value": 56580,
+          "secondSource": {
+            "value": 56764,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d2q4",
+      "prompt": "Name an EU country with a life expectancy under 80 years",
+      "direction": "under",
+      "limit": 80,
+      "unit": "years",
+      "format": "dec1",
+      "source": "World Bank, Life expectancy at birth, total (SP.DYN.LE00.IN), 2023",
+      "groupLabel": "an EU member state",
+      "best": {
+        "name": "Czechia",
+        "value": 79.8,
+        "score": 100
+      },
+      "checks": [
+        {
+          "id": "CZE",
+          "name": "Czechia",
+          "value": 79.8,
+          "secondSource": {
+            "value": 79.7,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "EST",
+          "name": "Estonia",
+          "value": 78.8,
+          "secondSource": {
+            "value": 79.3,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "HRV",
+          "name": "Croatia",
+          "value": 78.5,
+          "secondSource": {
+            "value": 78.6,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "DEU",
+          "name": "Germany",
+          "value": 81,
+          "secondSource": {
+            "value": 81,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "CYP",
+          "name": "Cyprus",
+          "value": 81.6,
+          "secondSource": {
+            "value": 82,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "FIN",
+          "name": "Finland",
+          "value": 81.6,
+          "secondSource": {
+            "value": 81.1,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "GRC",
+          "name": "Greece",
+          "value": 81.7,
+          "secondSource": {
+            "value": 81.9,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "POL",
+          "name": "Poland",
+          "value": 78.3,
+          "secondSource": {
+            "value": 78.1,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "missing-alias",
+          "text": "'Czech' and 'Czech Rep' are not recognized. 'Czech' is 2 edits from 'Czechia', beyond the 1-typo tolerance for that length. Czechia (life expectancy ~79-80) is a plausible answer for under 80.",
+          "suggestion": "Add aliases to CZE: \"Czech\", \"Czech Rep\". Consider \"Slovak\" for SVK too.",
+          "blocking": false,
+          "resolution": "Added aliases Czech and Czech Rep. Covered by tests/content.test.mjs."
+        }
+      ],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d2q5",
+      "prompt": "Name an EU country with a nominal GDP under $100 billion",
+      "direction": "under",
+      "limit": 100000000000,
+      "unit": "US$",
+      "format": "usd-big",
+      "source": "World Bank, GDP (NY.GDP.MKTP.CD), 2023",
+      "groupLabel": "an EU member state",
+      "best": {
+        "name": "Luxembourg",
+        "value": 88788881539,
+        "score": 89
+      },
+      "checks": [
+        {
+          "id": "LUX",
+          "name": "Luxembourg",
+          "value": 88788881539,
+          "secondSource": {
+            "value": 88814000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "HRV",
+          "name": "Croatia",
+          "value": 85621337533,
+          "secondSource": {
+            "value": 85649000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "LTU",
+          "name": "Lithuania",
+          "value": 80356613555,
+          "secondSource": {
+            "value": 80392000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "BGR",
+          "name": "Bulgaria",
+          "value": 102204457335,
+          "secondSource": {
+            "value": 102237000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "SVK",
+          "name": "Slovakia",
+          "value": 133578518424,
+          "secondSource": {
+            "value": 133617000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "HUN",
+          "name": "Hungary",
+          "value": 213029511029,
+          "secondSource": {
+            "value": 213104000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [],
+      "flags": [],
+      "status": "clear"
+    }
+  ]
+}

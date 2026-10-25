@@ -1,0 +1,611 @@
+{
+  "day": 5,
+  "date": "2026-11-05",
+  "theme": "Asia Major",
+  "emoji": "🏯",
+  "finalizedAt": "2026-10-24T16:02:10.119Z",
+  "status": "flagged",
+  "questions": [
+    {
+      "id": "d5q1",
+      "prompt": "Name an East, Southeast or South Asian country with a population under 30 million",
+      "direction": "under",
+      "limit": 30000000,
+      "unit": "people",
+      "format": "int",
+      "source": "World Bank, Population, total (SP.POP.TOTL), 2023",
+      "groupLabel": "an East, Southeast or South Asian country",
+      "best": {
+        "name": "Nepal",
+        "value": 29694614,
+        "score": 99
+      },
+      "checks": [
+        {
+          "id": "NPL",
+          "name": "Nepal",
+          "value": 29694614,
+          "secondSource": {
+            "value": 30899443,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "PRK",
+          "name": "North Korea",
+          "value": 26418204,
+          "secondSource": {
+            "value": 26072217,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "LKA",
+          "name": "Sri Lanka",
+          "value": 22037000,
+          "secondSource": {
+            "value": 23326272,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 5.9%, without changing the result."
+        },
+        {
+          "id": "MYS",
+          "name": "Malaysia",
+          "value": 35126298,
+          "secondSource": {
+            "value": 34219975,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 2.6%, without changing the result."
+        },
+        {
+          "id": "AFG",
+          "name": "Afghanistan",
+          "value": 41454761,
+          "secondSource": {
+            "value": 39232003,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 5.4%, without changing the result."
+        },
+        {
+          "id": "KOR",
+          "name": "South Korea",
+          "value": 51712619,
+          "secondSource": {
+            "value": 51966948,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "missing-alias",
+          "text": "'S Korea', 'S. Korea', 'N Korea', 'N. Korea' and 'ROK' are unrecognized. North Korea (~26M) is a valid answer for under 30 million, and 'N Korea' is a natural way to type it in 20 seconds.",
+          "suggestion": "Add to KOR: \"S Korea\", \"ROK\". Add to PRK: \"N Korea\".",
+          "blocking": false,
+          "resolution": "Added aliases S Korea, ROK and N Korea. Covered by tests/content.test.mjs."
+        }
+      ],
+      "flags": [
+        "Nepal: The second source puts this answer on the other side of the line."
+      ],
+      "status": "flagged"
+    },
+    {
+      "id": "d5q2",
+      "prompt": "Name an East, Southeast or South Asian country with a total area under 200,000 km²",
+      "direction": "under",
+      "limit": 200000,
+      "unit": "km²",
+      "format": "int",
+      "source": "World Bank, Surface area (AG.SRF.TOTL.K2), 2023",
+      "groupLabel": "an East, Southeast or South Asian country",
+      "best": {
+        "name": "Cambodia",
+        "value": 181035,
+        "score": 91
+      },
+      "checks": [
+        {
+          "id": "KHM",
+          "name": "Cambodia",
+          "value": 181035,
+          "secondSource": {
+            "value": 181035,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "BGD",
+          "name": "Bangladesh",
+          "value": 147570,
+          "secondSource": {
+            "value": 148460,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "NPL",
+          "name": "Nepal",
+          "value": 147181,
+          "secondSource": {
+            "value": 147181,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "LAO",
+          "name": "Laos",
+          "value": 236800,
+          "secondSource": {
+            "value": 236800,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "PHL",
+          "name": "Philippines",
+          "value": 300000,
+          "secondSource": {
+            "value": 300000,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "MYS",
+          "name": "Malaysia",
+          "value": 330241,
+          "secondSource": {
+            "value": 330621,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d5q3",
+      "prompt": "Name an East, Southeast or South Asian country with a life expectancy over 75 years",
+      "direction": "over",
+      "limit": 75,
+      "unit": "years",
+      "format": "dec1",
+      "source": "World Bank, Life expectancy at birth, total (SP.DYN.LE00.IN), 2023",
+      "groupLabel": "an East, Southeast or South Asian country",
+      "best": {
+        "name": "Brunei",
+        "value": 75.3,
+        "score": 100
+      },
+      "checks": [
+        {
+          "id": "BRN",
+          "name": "Brunei",
+          "value": 75.3,
+          "secondSource": {
+            "value": 76.3,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "THA",
+          "name": "Thailand",
+          "value": 76.4,
+          "secondSource": {
+            "value": 78.1,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 2.2%, without changing the result."
+        },
+        {
+          "id": "MYS",
+          "name": "Malaysia",
+          "value": 76.7,
+          "secondSource": {
+            "value": 74.6,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "BGD",
+          "name": "Bangladesh",
+          "value": 74.7,
+          "secondSource": {
+            "value": 72.7,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 2.7%, without changing the result."
+        },
+        {
+          "id": "VNM",
+          "name": "Vietnam",
+          "value": 74.6,
+          "secondSource": {
+            "value": 74.3,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "PRK",
+          "name": "North Korea",
+          "value": 73.6,
+          "secondSource": {
+            "value": 72.1,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 2.0%, without changing the result."
+        },
+        {
+          "id": "BTN",
+          "name": "Bhutan",
+          "value": 73,
+          "secondSource": {
+            "value": 75.3,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "LKA",
+          "name": "Sri Lanka",
+          "value": 77.5,
+          "secondSource": {
+            "value": 76.2,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "membership",
+          "text": "Iran (life expectancy ~77, valid here) and Afghanistan count as Southern Asia under the UN geoscheme. Many players treat Iran as Middle East/Western Asia and Afghanistan as Central Asia, and the notes only say Central and Western Asia are excluded. Players may dispute both inclusions, or think other Middle East countries should count too.",
+          "suggestion": "Add to the south-east-asia notes and help text: \"Iran and Afghanistan count as Southern Asia (UN geoscheme); Western Asia, e.g. Saudi Arabia, Israel, UAE, does not.\"",
+          "blocking": false,
+          "resolution": ""
+        }
+      ],
+      "flags": [
+        "Malaysia: The second source puts this answer on the other side of the line.",
+        "Bhutan: The second source puts this answer on the other side of the line."
+      ],
+      "status": "flagged"
+    },
+    {
+      "id": "d5q4",
+      "prompt": "Name an East, Southeast or South Asian country with a nominal GDP per person over $10,000",
+      "direction": "over",
+      "limit": 10000,
+      "unit": "US$",
+      "format": "usd",
+      "source": "World Bank, GDP per capita (NY.GDP.PCAP.CD), 2023",
+      "groupLabel": "an East, Southeast or South Asian country",
+      "best": {
+        "name": "Malaysia",
+        "value": 11386,
+        "score": 88
+      },
+      "checks": [
+        {
+          "id": "MYS",
+          "name": "Malaysia",
+          "value": 11386,
+          "secondSource": {
+            "value": 12107,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 6.3%, without changing the result."
+        },
+        {
+          "id": "MDV",
+          "name": "Maldives",
+          "value": 12588,
+          "secondSource": {
+            "value": 16637,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 32.2%, without changing the result."
+        },
+        {
+          "id": "CHN",
+          "name": "China",
+          "value": 12951,
+          "secondSource": {
+            "value": 13029,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "THA",
+          "name": "Thailand",
+          "value": 7211,
+          "secondSource": {
+            "value": 7211,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "MNG",
+          "name": "Mongolia",
+          "value": 5839,
+          "secondSource": {
+            "value": 5780,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "IRN",
+          "name": "Iran",
+          "value": 5049,
+          "secondSource": {
+            "value": 4940,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 2.2%, without changing the result."
+        }
+      ],
+      "adversarial": [],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d5q5",
+      "prompt": "Name an East, Southeast or South Asian country with a population over 240 million",
+      "direction": "over",
+      "limit": 240000000,
+      "unit": "people",
+      "format": "int",
+      "source": "World Bank, Population, total (SP.POP.TOTL), 2023",
+      "groupLabel": "an East, Southeast or South Asian country",
+      "best": {
+        "name": "Pakistan",
+        "value": 247504495,
+        "score": 97
+      },
+      "checks": [
+        {
+          "id": "PAK",
+          "name": "Pakistan",
+          "value": 247504495,
+          "secondSource": {
+            "value": 247653551,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "IDN",
+          "name": "Indonesia",
+          "value": 281190067,
+          "secondSource": {
+            "value": 279476346,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "CHN",
+          "name": "China",
+          "value": 1410710000,
+          "secondSource": {
+            "value": 1413142846,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "BGD",
+          "name": "Bangladesh",
+          "value": 171466990,
+          "secondSource": {
+            "value": 167184465,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 2.5%, without changing the result."
+        },
+        {
+          "id": "JPN",
+          "name": "Japan",
+          "value": 124516650,
+          "secondSource": {
+            "value": 123719238,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "PHL",
+          "name": "Philippines",
+          "value": 114891199,
+          "secondSource": {
+            "value": 116434200,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [],
+      "flags": [],
+      "status": "clear"
+    }
+  ]
+}

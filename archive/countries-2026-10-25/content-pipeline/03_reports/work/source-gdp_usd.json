@@ -1,0 +1,105 @@
+{
+  "field": "gdp_usd",
+  "source": {
+    "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+    "publisher": "International Monetary Fund",
+    "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+    "year": 2023,
+    "independentOf": "IMF WEO figures are compiled by IMF staff from national statistical agencies and central banks and converted at IMF exchange rates; they are an independent compilation, not taken from or republishing the World Bank WDI series NY.GDP.MKTP.CD."
+  },
+  "values": {
+    "LUX": {
+      "value": 88814000000
+    },
+    "HRV": {
+      "value": 85649000000
+    },
+    "LTU": {
+      "value": 80392000000
+    },
+    "BGR": {
+      "value": 102237000000
+    },
+    "SVK": {
+      "value": 133617000000
+    },
+    "HUN": {
+      "value": 213104000000
+    },
+    "BEN": {
+      "value": 19679000000
+    },
+    "BWA": {
+      "value": 19411000000
+    },
+    "GAB": {
+      "value": 20059000000
+    },
+    "BFA": {
+      "value": 20116000000
+    },
+    "MOZ": {
+      "value": 20921000000
+    },
+    "GIN": {
+      "value": 35333000000
+    },
+    "TCD": {
+      "value": 18638000000
+    },
+    "VEN": {
+      "value": 76762000000
+    },
+    "GTM": {
+      "value": 104283000000
+    },
+    "DOM": {
+      "value": 120794000000
+    },
+    "CRI": {
+      "value": 87524000000
+    },
+    "PAN": {
+      "value": 83812000000
+    },
+    "URY": {
+      "value": 79214000000
+    },
+    "STP": {
+      "value": 696000000
+    },
+    "DMA": {
+      "value": 659000000
+    },
+    "TON": {
+      "value": 599000000
+    },
+    "WSM": {
+      "value": 1045000000
+    },
+    "KNA": {
+      "value": 1034000000
+    },
+    "VCT": {
+      "value": 1047000000
+    },
+    "NLD": {
+      "value": 1135803000000
+    },
+    "TUR": {
+      "value": 1153295000000
+    },
+    "SAU": {
+      "value": 1218585000000
+    },
+    "CHE": {
+      "value": 931970000000
+    },
+    "POL": {
+      "value": 812959000000
+    },
+    "BEL": {
+      "value": 650967000000
+    }
+  }
+}

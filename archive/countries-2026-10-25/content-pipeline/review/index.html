@@ -1,0 +1,450 @@
+<title>Lowball Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one review queue, flagged first. Each card puts our number and the second source's number on the same line as the limit. */
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --ink: #161a22;
+  --muted: #5b6372;
+  --rule: #dfe2e8;
+  --accent: #2346c7;
+  --accent-ink: #ffffff;
+  --ok: #18794e;
+  --ok-soft: #e3f3ea;
+  --bad: #c22b2b;
+  --bad-soft: #fbe9e8;
+  --warn: #9a5b00;
+  --warn-soft: #fbf0dc;
+  --font-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-data: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1218; --surface: #171b23; --ink: #e8ebf1; --muted: #9aa3b2; --rule: #2a303c;
+    --accent: #7d97ff; --accent-ink: #0f1218;
+    --ok: #4cc58a; --ok-soft: #133024; --bad: #ff7a72; --bad-soft: #3a1a1a; --warn: #f0b552; --warn-soft: #34270f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1218; --surface: #171b23; --ink: #e8ebf1; --muted: #9aa3b2; --rule: #2a303c;
+  --accent: #7d97ff; --accent-ink: #0f1218;
+  --ok: #4cc58a; --ok-soft: #133024; --bad: #ff7a72; --bad-soft: #3a1a1a; --warn: #f0b552; --warn-soft: #34270f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 64px;
+}
+.wrap { max-width: 980px; margin: 0 auto; display: grid; gap: 24px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.02em; }
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.muted { color: var(--muted); }
+
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; }
+header p { margin: 4px 0 0; }
+
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.summary > div { background: var(--surface); padding: 14px 16px; display: grid; gap: 2px; }
+.summary .big { font-family: var(--font-data); font-size: 24px; font-weight: 600; }
+
+.trust { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; display: grid; gap: 12px; }
+.trust-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; }
+.meter { height: 10px; border-radius: 99px; background: var(--rule); overflow: hidden; }
+.meter > i { display: block; height: 100%; background: var(--ok); border-radius: 99px; transition: width .4s ease; }
+.trust-stats { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; }
+.trust-stats b { font-family: var(--font-data); font-weight: 600; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip-btn { font: inherit; font-size: 14px; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); padding: 6px 12px; border-radius: 99px; cursor: pointer; }
+.chip-btn[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip-btn:focus-visible, button:focus-visible, textarea:focus-visible, .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.keys { margin-left: auto; font-size: 13px; }
+kbd { font-family: var(--font-data); font-size: 12px; border: 1px solid var(--rule); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--surface); }
+
+.queue { display: grid; gap: 16px; }
+.empty { background: var(--surface); border: 1px dashed var(--rule); border-radius: 10px; padding: 32px; text-align: center; }
+
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px; display: grid; gap: 14px; min-width: 0; }
+.card.flagged { border-color: var(--bad); box-shadow: inset 4px 0 0 var(--bad); }
+.card.decided { opacity: .78; }
+.card-head { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.card h3 { font-size: 18px; font-weight: 700; flex: 1 1 320px; min-width: 0; }
+.pill { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 3px 8px; border-radius: 99px; white-space: nowrap; }
+.pill.clear { background: var(--ok-soft); color: var(--ok); }
+.pill.flagged { background: var(--bad-soft); color: var(--bad); }
+.pill.minor { background: var(--warn-soft); color: var(--warn); }
+.pill.neutral { background: var(--bg); color: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: var(--muted); }
+.meta b { color: var(--ink); font-weight: 600; }
+
+.flags { background: var(--bad-soft); color: var(--bad); border-radius: 8px; padding: 10px 12px; margin: 0; list-style: none; display: grid; gap: 4px; font-size: 14px; }
+
+.line { width: 100%; height: auto; display: block; }
+.line text { font-family: var(--font-data); font-size: 11px; fill: var(--muted); }
+.line .limit { stroke: var(--ink); stroke-width: 2; }
+.line .axis { stroke: var(--rule); stroke-width: 6; stroke-linecap: round; }
+.line .zone { fill: var(--ok-soft); }
+.line .ours.scores { fill: var(--ok); }
+.line .ours.bust { fill: var(--bad); }
+.line .theirs { fill: var(--surface); stroke: var(--ink); stroke-width: 1.5; }
+.line .link { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 2; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; color: var(--muted); }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; vertical-align: -1px; margin-right: 4px; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+td.r, th.r { text-align: right; }
+td a { color: var(--accent); }
+tr.best td:first-child::after { content: " · best"; color: var(--ok); font-size: 12px; }
+
+.adv { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14px; }
+.adv .kind { font-family: var(--font-data); font-size: 12px; color: var(--muted); }
+.adv .sugg { color: var(--muted); }
+.adv .fixed { color: var(--ok); }
+
+.decide { display: grid; gap: 8px; border-top: 1px solid var(--rule); padding-top: 14px; }
+.decide-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn { font: inherit; font-weight: 600; font-size: 14px; border-radius: 8px; padding: 8px 14px; cursor: pointer; border: 1px solid var(--rule); background: var(--surface); color: var(--ink); min-height: 40px; }
+.btn.approve { background: var(--ok); border-color: var(--ok); color: var(--accent-ink); }
+.btn.fix { background: var(--surface); border-color: var(--bad); color: var(--bad); }
+.btn[disabled] { opacity: .45; cursor: not-allowed; }
+.decision { font-size: 14px; }
+.decision.approve { color: var(--ok); }
+.decision.fix { color: var(--bad); }
+textarea { font: inherit; width: 100%; min-height: 64px; border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; background: var(--bg); color: var(--ink); resize: vertical; }
+.status { font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { .meter > i { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Lowball content</div>
+      <h1>Review queue</h1>
+      <p class="muted" id="generated">Loading the latest agent reports…</p>
+    </div>
+    <p class="status muted" id="db-status">Connecting to saved decisions…</p>
+  </header>
+
+  <section class="summary" aria-label="Summary">
+    <div><span class="eyebrow">To review</span><span class="big" id="s-todo">–</span></div>
+    <div><span class="eyebrow">Flagged by agents</span><span class="big" id="s-flagged">–</span></div>
+    <div><span class="eyebrow">Approved</span><span class="big" id="s-approved">–</span></div>
+    <div><span class="eyebrow">Sent back to fix</span><span class="big" id="s-fix">–</span></div>
+  </section>
+
+  <section class="trust" aria-labelledby="trust-title">
+    <div class="trust-head">
+      <h2 id="trust-title" style="font-size:17px">Agent track record</h2>
+      <span class="muted" id="trust-goal">Auto-approval unlocks after 30 clean days in a row</span>
+    </div>
+    <div class="meter" role="meter" aria-label="Clean days toward auto-approval" aria-valuemin="0" aria-valuemax="30" id="meter"><i id="meter-fill" style="width:0%"></i></div>
+    <div class="trust-stats">
+      <span><b id="t-clean">0</b> clean days in a row</span>
+      <span><b id="t-reviewed">0</b> questions reviewed</span>
+      <span><b id="t-caught">0</b> problems agents caught</span>
+      <span><b id="t-missed">0</b> problems agents missed</span>
+      <span><b id="t-false">0</b> false alarms</span>
+    </div>
+  </section>
+
+  <div class="filters" role="group" aria-label="Show">
+    <button class="chip-btn" data-filter="todo" aria-pressed="true">To review</button>
+    <button class="chip-btn" data-filter="flagged" aria-pressed="false">Flagged</button>
+    <button class="chip-btn" data-filter="all" aria-pressed="false">All</button>
+    <span class="keys muted"><kbd>J</kbd>/<kbd>K</kbd> move · <kbd>A</kbd> approve · <kbd>F</kbd> needs fix</span>
+  </div>
+
+  <section class="queue" id="queue" aria-live="polite">
+    <div class="empty muted">Loading questions…</div>
+  </section>
+</div>
+
+<script>
+const CLEAN_DAYS_GOAL = 30;
+const state = { days: [], reviews: {}, filter: 'todo', db: null, me: null, canWrite: false, focus: 0, writing: new Set() };
+const $ = (id) => document.getElementById(id);
+
+function fmt(v, format) {
+  if (v === null || v === undefined) return '–';
+  if (format === 'dec1') return v.toFixed(1);
+  if (format === 'usd') return '$' + Math.round(v).toLocaleString('en-US');
+  if (format === 'usd-big') {
+    if (v >= 1e12) return '$' + (v / 1e12).toFixed(2) + 'T';
+    if (v >= 1e9) return '$' + (v / 1e9).toFixed(2) + 'B';
+    return '$' + (v / 1e6).toFixed(0) + 'M';
+  }
+  return Math.round(v).toLocaleString('en-US');
+}
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+}
+function safeUrl(u) {
+  try { const x = new URL(u); return x.protocol === 'https:' || x.protocol === 'http:' ? x.href : ''; } catch { return ''; }
+}
+
+function allQuestions() {
+  const out = [];
+  for (const d of state.days) for (const q of d.questions) out.push({ ...q, day: d });
+  return out;
+}
+
+// --- Trust panel: derived from saved decisions only ---------------------
+function trust() {
+  let reviewed = 0, caught = 0, missed = 0, falseAlarm = 0;
+  for (const r of Object.values(state.reviews)) {
+    reviewed++;
+    if (r.decision === 'fix' && r.agentStatus === 'flagged') caught++;
+    if (r.decision === 'fix' && r.agentStatus === 'clear') missed++;
+    if (r.decision === 'approve' && r.agentStatus === 'flagged') falseAlarm++;
+  }
+  // Clean days: fully reviewed days, in order, where agents missed nothing. A miss resets the run.
+  let clean = 0;
+  for (const d of [...state.days].sort((a, b) => a.day - b.day)) {
+    const rs = d.questions.map((q) => state.reviews[q.id]);
+    if (rs.some((r) => !r)) break;
+    clean = rs.some((r) => r.decision === 'fix' && r.agentStatus === 'clear') ? 0 : clean + 1;
+  }
+  return { reviewed, caught, missed, falseAlarm, clean };
+}
+
+function renderSummary() {
+  const qs = allQuestions();
+  const rs = state.reviews;
+  $('s-todo').textContent = qs.filter((q) => !rs[q.id]).length;
+  $('s-flagged').textContent = qs.filter((q) => q.status === 'flagged').length;
+  $('s-approved').textContent = qs.filter((q) => rs[q.id]?.decision === 'approve').length;
+  $('s-fix').textContent = qs.filter((q) => rs[q.id]?.decision === 'fix').length;
+  const t = trust();
+  $('t-clean').textContent = t.clean;
+  $('t-reviewed').textContent = t.reviewed;
+  $('t-caught').textContent = t.caught;
+  $('t-missed').textContent = t.missed;
+  $('t-false').textContent = t.falseAlarm;
+  $('meter').setAttribute('aria-valuenow', Math.min(t.clean, CLEAN_DAYS_GOAL));
+  $('meter-fill').style.width = Math.min(100, (t.clean / CLEAN_DAYS_GOAL) * 100) + '%';
+  $('trust-goal').textContent = t.clean >= CLEAN_DAYS_GOAL
+    ? 'Auto-approval unlocked: clear days can skip review'
+    : `${CLEAN_DAYS_GOAL - t.clean} more clean days until auto-approval`;
+}
+
+// --- Number line --------------------------------------------------------
+function numberLine(q) {
+  const W = 640, H = 70, pad = 28, y = 34;
+  const vals = [q.limit];
+  for (const c of q.checks) { vals.push(c.value); if (typeof c.secondSource?.value === 'number') vals.push(c.secondSource.value); }
+  let lo = Math.min(...vals), hi = Math.max(...vals);
+  const span = hi - lo || Math.abs(hi) || 1;
+  lo -= span * 0.06; hi += span * 0.06;
+  const x = (v) => pad + ((v - lo) / (hi - lo)) * (W - pad * 2);
+  const lx = x(q.limit);
+  const zone = q.direction === 'under' ? `<rect class="zone" x="${pad}" y="${y - 10}" width="${Math.max(0, lx - pad)}" height="20" rx="3"/>`
+    : `<rect class="zone" x="${lx}" y="${y - 10}" width="${Math.max(0, W - pad - lx)}" height="20" rx="3"/>`;
+  let marks = '';
+  for (const c of q.checks) {
+    const ox = x(c.value);
+    const tv = c.secondSource?.value;
+    if (typeof tv === 'number') {
+      const tx = x(tv);
+      marks += `<line class="link" x1="${ox}" y1="${y}" x2="${tx}" y2="${y}"/>`;
+      marks += `<circle class="theirs" cx="${tx}" cy="${y}" r="5"><title>${esc(c.name)} (second source): ${esc(fmt(tv, q.format))}</title></circle>`;
+    }
+    marks += `<circle class="ours ${c.side}" cx="${ox}" cy="${y}" r="4.5"><title>${esc(c.name)} (ours): ${esc(fmt(c.value, q.format))}</title></circle>`;
+  }
+  const anchor = lx < W * 0.15 ? 'start' : lx > W * 0.85 ? 'end' : 'middle';
+  return `<svg class="line" viewBox="0 0 ${W} ${H}" role="img" aria-label="Values near the line ${esc(fmt(q.limit, q.format))}">
+    <line class="axis" x1="${pad}" y1="${y}" x2="${W - pad}" y2="${y}"/>${zone}
+    <line class="limit" x1="${lx}" y1="${y - 18}" x2="${lx}" y2="${y + 18}"/>
+    <text x="${lx}" y="${y + 32}" text-anchor="${anchor}">line ${esc(fmt(q.limit, q.format))}</text>
+    ${marks}</svg>`;
+}
+
+// --- Cards ---------------------------------------------------------------
+function verdictPill(c) {
+  const cls = { agree: 'clear', minor: 'minor', disagree: 'flagged', unverified: 'flagged' }[c.agreement] || 'neutral';
+  return `<span class="pill ${cls}">${esc(c.agreement)}</span>`;
+}
+function diffText(c) {
+  const t = c.secondSource?.value;
+  if (typeof t !== 'number') return '–';
+  const d = ((t - c.value) / c.value) * 100;
+  return (d > 0 ? '+' : '') + d.toFixed(1) + '%';
+}
+
+function card(q, index) {
+  const r = state.reviews[q.id];
+  const decided = r ? (r.decision === 'approve' ? 'Approved' : 'Sent back to fix') : '';
+  const sources = [...new Set(q.checks.map((c) => c.secondSource?.title).filter(Boolean))];
+  const rows = q.checks.map((c) => {
+    const url = safeUrl(c.secondSource?.url);
+    const theirs = typeof c.secondSource?.value === 'number' ? fmt(c.secondSource.value, q.format) : '–';
+    return `<tr class="${c.name === q.best.name ? 'best' : ''}">
+      <td>${esc(c.name)}</td>
+      <td><span class="pill ${c.side === 'scores' ? 'clear' : 'flagged'}">${c.side === 'scores' ? 'scores' : 'bust'}</span></td>
+      <td class="r num">${esc(fmt(c.value, q.format))}</td>
+      <td class="r num">${url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(theirs)}</a>` : esc(theirs)}</td>
+      <td class="r num">${diffText(c)}</td>
+      <td>${verdictPill(c)}</td></tr>`;
+  }).join('');
+  const adv = q.adversarial.length
+    ? `<div><div class="eyebrow">Adversarial player</div><ul class="adv">${q.adversarial.map((a) => `<li><span class="kind">${esc(a.kind)}${a.blocking ? ' · blocking' : ''}</span> ${esc(a.text)}${a.resolution ? ` <span class="fixed">Fixed: ${esc(a.resolution)}</span>` : a.suggestion ? ` <span class="sugg">Suggestion: ${esc(a.suggestion)}</span>` : ''}</li>`).join('')}</ul></div>`
+    : '';
+  const disabled = state.canWrite ? '' : 'disabled';
+  return `<article class="card ${q.status === 'flagged' ? 'flagged' : ''} ${r ? 'decided' : ''}" tabindex="0" data-qid="${esc(q.id)}" data-index="${index}">
+    <div class="card-head">
+      <span class="eyebrow">#${q.day.day} ${esc(q.day.emoji)} ${esc(q.day.theme)} · ${esc(q.day.date)}</span>
+      <span class="pill ${q.status === 'flagged' ? 'flagged' : 'clear'}">${q.status === 'flagged' ? 'Flagged' : 'Agents: clear'}</span>
+    </div>
+    <h3>${esc(q.prompt)}</h3>
+    <div class="meta">
+      <span>Direction <b>${q.direction === 'under' ? 'at or under' : 'at or over'}</b></span>
+      <span>Line <b class="num">${esc(fmt(q.limit, q.format))}</b> ${esc(q.unit)}</span>
+      <span>Best answer <b>${esc(q.best.name)}</b> <span class="num">${esc(fmt(q.best.value, q.format))}</span> scores <b class="num">${q.best.score}</b></span>
+    </div>
+    ${q.flags.length ? `<ul class="flags">${q.flags.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>` : ''}
+    <div>
+      ${numberLine(q)}
+      <div class="legend"><span><i class="dot" style="background:var(--ok)"></i>ours, scores</span><span><i class="dot" style="background:var(--bad)"></i>ours, bust</span><span><i class="dot" style="border:1.5px solid var(--ink)"></i>second source</span><span>shaded = scoring side</span></div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Country</th><th>Side</th><th class="r">Ours</th><th class="r">Second source</th><th class="r">Diff</th><th>Verdict</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>
+    <div class="meta"><span>Ours: ${esc(q.source)}</span>${sources.length ? `<span>Second source: ${sources.map(esc).join('; ')}</span>` : ''}</div>
+    ${adv}
+    <div class="decide">
+      <div class="decide-row">
+        <button class="btn approve" data-act="approve" ${disabled}>Approve</button>
+        <button class="btn fix" data-act="fix" ${disabled}>Needs fix</button>
+        ${r ? `<span class="decision ${r.decision}">${decided}${r.note ? `: ${esc(r.note)}` : ''}</span>` : ''}
+        ${r && state.canWrite ? `<button class="btn" data-act="undo">Undo</button>` : ''}
+      </div>
+      <label class="muted" for="note-${esc(q.id)}" style="font-size:13px">Note (what's wrong, if anything)</label>
+      <textarea id="note-${esc(q.id)}" ${disabled} placeholder="e.g. Brunei's population is 455,500 in the census">${esc(r?.note ?? '')}</textarea>
+    </div>
+  </article>`;
+}
+
+function visible() {
+  const qs = allQuestions();
+  const rs = state.reviews;
+  let list = qs;
+  if (state.filter === 'todo') list = qs.filter((q) => !rs[q.id]);
+  if (state.filter === 'flagged') list = qs.filter((q) => q.status === 'flagged');
+  return list.sort((a, b) => (a.status === 'flagged' ? 0 : 1) - (b.status === 'flagged' ? 0 : 1) || a.day.day - b.day.day || a.id.localeCompare(b.id));
+}
+
+function render() {
+  renderSummary();
+  const list = visible();
+  const queue = $('queue');
+  if (!state.days.length) return;
+  if (!list.length) {
+    queue.innerHTML = `<div class="empty"><h3>Nothing left to review</h3><p class="muted">Every question in the latest reports has a decision. New days appear here after the next agent run.</p></div>`;
+    return;
+  }
+  const active = document.activeElement?.closest?.('.card')?.dataset.qid;
+  queue.innerHTML = list.map(card).join('');
+  if (active) queue.querySelector(`[data-qid="${CSS.escape(active)}"]`)?.focus({ preventScroll: true });
+}
+
+// --- Decisions ------------------------------------------------------------
+async function decide(qid, decision) {
+  if (!state.db || !state.canWrite || state.writing.has(qid)) return;
+  const q = allQuestions().find((x) => x.id === qid);
+  const note = document.getElementById('note-' + qid)?.value.trim() ?? '';
+  const ref = state.db.collection('reviews').doc(qid);
+  state.writing.add(qid);
+  try {
+    if (decision === 'undo') await ref.delete();
+    else await ref.set({ day: q.day.day, decision, note, agentStatus: q.status, reviewedAt: new Date().toISOString(), reviewer: state.me ?? null });
+    $('db-status').textContent = decision === 'undo' ? 'Decision removed' : decision === 'approve' ? 'Approved' : 'Marked as needing a fix';
+  } catch (e) {
+    if (e?.code === 'invalid_argument') { state.canWrite = false; render(); }
+    $('db-status').textContent = 'Could not save: ' + (e?.message || 'try again');
+  } finally {
+    state.writing.delete(qid);
+  }
+}
+
+document.addEventListener('click', (e) => {
+  const f = e.target.closest('[data-filter]');
+  if (f) {
+    state.filter = f.dataset.filter;
+    document.querySelectorAll('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b === f)));
+    render();
+    return;
+  }
+  const b = e.target.closest('[data-act]');
+  if (b) decide(b.closest('.card').dataset.qid, b.dataset.act);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.target.matches('textarea, input') || e.metaKey || e.ctrlKey || e.altKey) return;
+  const cards = [...document.querySelectorAll('.card')];
+  if (!cards.length) return;
+  const cur = document.activeElement?.closest?.('.card');
+  let i = cur ? cards.indexOf(cur) : -1;
+  const k = e.key.toLowerCase();
+  if (k === 'j' || k === 'k') {
+    i = Math.max(0, Math.min(cards.length - 1, i + (k === 'j' ? 1 : -1)));
+    cards[i].focus();
+    cards[i].scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    e.preventDefault();
+  } else if ((k === 'a' || k === 'f') && cur) {
+    decide(cur.dataset.qid, k === 'a' ? 'approve' : 'fix');
+    e.preventDefault();
+  }
+});
+
+// --- Boot -------------------------------------------------------------------
+async function loadBundle() {
+  try {
+    const res = await fetch('review-bundle.json', { cache: 'no-cache' });
+    const bundle = await res.json();
+    state.days = bundle.days;
+    $('generated').textContent = `${bundle.days.length} days from the agent run on ${new Date(bundle.generatedAt).toLocaleString()}`;
+  } catch {
+    $('generated').textContent = 'The agent reports could not be loaded.';
+    $('queue').innerHTML = `<div class="empty"><h3>No reports yet</h3><p class="muted">Ask Claude to run the verify-day skill. Reports appear here when it finishes.</p></div>`;
+  }
+  render();
+}
+
+async function connect() {
+  const [db, user] = await Promise.all([window.claude?.use?.('db') ?? null, window.claude?.use?.('user') ?? null]);
+  if (!db) {
+    $('db-status').textContent = 'Read-only here: decisions can be saved only when you open this page on claude.ai while signed in.';
+    render();
+    return;
+  }
+  state.db = db;
+  state.me = user ? await user.id() : null;
+  const can = user ? await user.can('data.write') : null;
+  state.canWrite = can !== false;
+  $('db-status').textContent = state.canWrite ? 'Decisions save automatically' : 'You can view decisions but not change them.';
+  db.collection('reviews').onSnapshot((snap) => {
+    const next = {};
+    for (const d of snap.docs) next[d.id] = d.data();
+    state.reviews = next;
+    render();
+  }, () => {
+    $('db-status').textContent = 'Lost the connection to saved decisions. Reload to reconnect.';
+  });
+  render();
+}
+
+loadBundle();
+connect();
+</script>

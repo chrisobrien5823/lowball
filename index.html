@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lowball</title>
+  <meta name="description" content="A daily trivia game. Get as close to the line as you can without going over.">
+  <meta name="theme-color" content="#f3f1ea">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="bar-inner">
+      <a class="brand" href="./" aria-label="Lowball home"><img class="brand-mark" src="favicon.svg" alt="" width="28" height="28"><span class="brand-name">Lowball</span></a>
+      <span class="bar-day" id="hdr-day"></span>
+      <button class="help-btn sound-btn" id="sound-btn" type="button" aria-pressed="true">Sound on</button>
+      <button class="help-btn" id="help-btn" type="button" aria-haspopup="dialog">How to play</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <p class="loading" id="loading">Loading today's puzzle…</p>
+
+    <section class="screen intro" id="screen-intro" hidden aria-labelledby="intro-title">
+      <div class="hero">
+        <h1 id="intro-title"><span id="intro-theme"></span></h1>
+        <p class="hero-sub" id="intro-sub"></p>
+      </div>
+      <div class="intro-side">
+        <ol class="rules">
+          <li>
+            <svg class="rule-pic" viewBox="0 0 56 36" aria-hidden="true"><rect x="2" y="2" width="52" height="32" rx="5" class="rp-plate"/><text x="28" y="14" text-anchor="middle" class="rp-kind">MAX</text><text x="28" y="29" text-anchor="middle" class="rp-num">500K</text></svg>
+            <span><strong>Read the limit.</strong> Each question sets a line, like a population of 500,000.</span>
+          </li>
+          <li>
+            <svg class="rule-pic" viewBox="0 0 56 36" aria-hidden="true"><rect x="2" y="7" width="52" height="22" rx="4" class="rp-field"/><rect x="9" y="12" width="2" height="12" class="rp-caret"/><rect x="15" y="17" width="20" height="3" rx="1.5" class="rp-type"/></svg>
+            <span><strong>Name a player or team</strong> before the 20-second countdown runs out. One answer per question.</span>
+          </li>
+          <li>
+            <svg class="rule-pic" viewBox="0 0 56 36" aria-hidden="true"><rect x="2" y="2" width="52" height="8" class="rp-trip"/><line x1="2" x2="54" y1="10" y2="10" class="rp-line"/><path d="M3 31 L13 26 L20 29 L31 20 L38 21 L50 13" class="rp-trace"/><circle cx="50" cy="13" r="3" class="rp-head"/></svg>
+            <span><strong>Get close without crossing.</strong> Points climb steeply near the line. Cross it and you bust.</span>
+          </li>
+        </ol>
+        <button class="go" id="start-btn" type="button">Start</button>
+      </div>
+    </section>
+
+    <section class="screen play" id="screen-play" hidden aria-label="Question">
+      <div class="rail">
+        <ol class="progress" id="progress" aria-label="Your answers so far"></ol>
+
+        <div class="limit-block">
+          <div class="sign" id="sign">
+            <span class="sign-kind" id="sign-kind">MAX</span>
+            <span class="sign-limit" id="sign-limit"></span>
+            <span class="sign-unit" id="sign-unit"></span>
+          </div>
+          <div class="prompt-wrap">
+            <p class="prompt" id="prompt"></p>
+            <p class="source" id="q-source"></p>
+          </div>
+        </div>
+
+        <div class="rail-foot">
+          <form class="answer" id="answer-form" autocomplete="off">
+            <label class="sr-only" for="answer">Your answer</label>
+            <input id="answer" name="answer" type="text" autocomplete="off" autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="go" placeholder="Type a name" maxlength="60">
+            <button type="submit" id="submit-btn">Go</button>
+          </form>
+          <p class="hint" id="hint" role="status" hidden></p>
+          <p class="source" id="pending" role="status" hidden>Plotting your answer…</p>
+
+          <div class="reveal" id="reveal" hidden>
+            <p class="verdict" id="verdict"></p>
+            <dl class="facts" id="facts"></dl>
+            <button class="go" id="next-btn" type="button">Next question</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="recorder">
+        <div class="recorder-head">
+          <span class="recorder-title" id="recorder-title"></span>
+          <div class="countdown" id="countdown" role="timer" aria-label="Seconds left"><span id="countdown-num">20</span></div>
+        </div>
+        <div class="chart-host" id="scene-wrap"></div>
+      </div>
+    </section>
+
+    <section class="screen results" id="screen-results" hidden aria-labelledby="results-title">
+      <div class="results-main">
+        <div class="hero">
+          <h1 id="results-title"><span class="total" id="total"></span><span class="total-of"> / 500</span></h1>
+          <p class="hero-sub" id="results-sub"></p>
+        </div>
+        <ol class="lineup" id="lineup" aria-label="Your five answers"></ol>
+      </div>
+
+      <div class="results-side">
+        <div class="share">
+          <pre class="share-card" id="share-card"></pre>
+          <div class="share-actions">
+            <button class="go" id="copy-btn" type="button">Copy result</button>
+            <button class="ghost-btn" id="share-btn" type="button" hidden>Share</button>
+          </div>
+          <p class="share-status" id="share-status" role="status"></p>
+        </div>
+
+        <section class="stats panel" aria-labelledby="stats-title">
+          <h2 id="stats-title">Your stats</h2>
+          <p class="practice-note" id="practice-note" hidden>Practice games don't count toward your stats.</p>
+          <dl class="stat-grid" id="stat-grid"></dl>
+          <div class="histogram" id="histogram" role="img"></div>
+        </section>
+
+        <p class="next-puzzle">Next puzzle in <span class="num" id="next-in"></span></p>
+      </div>
+    </section>
+
+    <section class="screen empty" id="screen-empty" hidden aria-labelledby="empty-title">
+      <div class="hero">
+        <h1 id="empty-title">Not ready yet</h1>
+        <p class="hero-sub" id="empty-sub"></p>
+      </div>
+      <p class="empty-note" id="empty-note"></p>
+    </section>
+  </main>
+
+  <dialog class="help" id="help" aria-labelledby="help-title">
+    <form method="dialog">
+      <h2 id="help-title">How to play</h2>
+      <p>Five questions a day, the same for everyone. Each one sets a line.</p>
+      <ul>
+        <li><strong>MAX</strong> questions: your answer has to fit under the line.</li>
+        <li><strong>MIN</strong> questions: your answer has to reach the line.</li>
+        <li>The chart draws the value you name, on a real scale. On a MAX question the pen climbs toward the line from below; on a MIN question the chart is flipped and the pen comes down toward the line from above. Crossing the line is always a bust.</li>
+        <li>The closer to the line, the more points, up to 100 per question. The climb is steepest near the line: within 10% of it is worth about 73 points, within 1% about 97. Cross to the wrong side and you bust.</li>
+        <li>Every question names a season, and anyone who played it can answer: hitters need 200 or more at-bats that year and pitchers 50 or more innings, so bench players and middle relievers count too. Type a real player or team outside that group, a name more than one person shares, or something we don't recognize, and we'll say why and you can try again. The clock keeps running.</li>
+        <li>Every number on a question comes from the one source named under its prompt, so you only ever need to check one.</li>
+        <li>Sound cues mark the pen climbing, a bust, your result, and the last five seconds. Everything you hear is also on screen, and the Sound button in the top bar turns it off for good.</li>
+        <li>A new puzzle opens every day at midnight US Eastern.</li>
+      </ul>
+      <p class="help-key" id="help-key"></p>
+      <button class="go" value="close">Got it</button>
+    </form>
+  </dialog>
+</body>
+</html>

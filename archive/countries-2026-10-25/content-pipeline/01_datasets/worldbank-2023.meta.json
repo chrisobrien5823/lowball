@@ -1,0 +1,45 @@
+{
+  "id": "worldbank-2023",
+  "title": "World Bank World Development Indicators",
+  "publisher": "World Bank",
+  "license": "CC BY 4.0",
+  "year": 2023,
+  "retrieved": "2026-10-24T15:45:10.048Z",
+  "sha256": "b079e14cf0686831ec8c8fa3f41876798b4151a56f3f75113040da83bad34e99",
+  "key": "iso3",
+  "fields": {
+    "population": {
+      "code": "SP.POP.TOTL",
+      "label": "Population, total",
+      "decimals": 0
+    },
+    "area_km2": {
+      "code": "AG.SRF.TOTL.K2",
+      "label": "Surface area (sq. km)",
+      "decimals": 0
+    },
+    "gdp_usd": {
+      "code": "NY.GDP.MKTP.CD",
+      "label": "GDP (current US$)",
+      "decimals": 0
+    },
+    "gdp_per_capita_usd": {
+      "code": "NY.GDP.PCAP.CD",
+      "label": "GDP per capita (current US$)",
+      "decimals": 0
+    },
+    "life_expectancy": {
+      "code": "SP.DYN.LE00.IN",
+      "label": "Life expectancy at birth, total (years)",
+      "decimals": 1
+    }
+  },
+  "urls": {
+    "countries": "https://api.worldbank.org/v2/country?format=json&per_page=400",
+    "population": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?date=2023&format=json&per_page=400",
+    "area_km2": "https://api.worldbank.org/v2/country/all/indicator/AG.SRF.TOTL.K2?date=2023&format=json&per_page=400",
+    "gdp_usd": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.CD?date=2023&format=json&per_page=400",
+    "gdp_per_capita_usd": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.CD?date=2023&format=json&per_page=400",
+    "life_expectancy": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?date=2023&format=json&per_page=400"
+  }
+}

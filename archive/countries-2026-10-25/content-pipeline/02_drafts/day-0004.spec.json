@@ -1,0 +1,12 @@
+{
+  "day": 4,
+  "theme": "Money Talks",
+  "emoji": "💰",
+  "questions": [
+    { "group": "sovereign", "field": "gdp_usd", "direction": "over", "limit": 200000000000, "prompt": "Name a country with a nominal GDP over $200 billion" },
+    { "group": "sovereign", "field": "gdp_per_capita_usd", "direction": "under", "limit": 9000, "prompt": "Name a country with a nominal GDP per person under $9,000" },
+    { "group": "sovereign", "field": "population", "direction": "under", "limit": 1000000, "prompt": "Name a country with a population under 1 million" },
+    { "group": "sovereign", "field": "area_km2", "direction": "under", "limit": 3000, "prompt": "Name a country with a total area under 3,000 km²" },
+    { "group": "sovereign", "field": "life_expectancy", "direction": "over", "limit": 79.2, "prompt": "Name a country with a life expectancy over 79.2 years" }
+  ]
+}

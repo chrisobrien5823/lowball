@@ -1,0 +1,11 @@
+{
+  "day": 1,
+  "theme": "Mix Tape",
+  "questions": [
+    { "group": "hitters-2004", "field": "hr", "direction": "under", "limit": 20, "prompt": "Name a hitter with under 20 home runs, in 2004" },
+    { "group": "pitchers-2013", "field": "p_w", "direction": "over", "limit": 10, "prompt": "Name a pitcher with over 10 wins, in 2013" },
+    { "group": "hitters-2018", "field": "rbi", "direction": "over", "limit": 75, "prompt": "Name a hitter with over 75 RBI, in 2018" },
+    { "group": "pitchers-2021", "field": "p_so", "direction": "under", "limit": 110, "prompt": "Name a pitcher with under 110 strikeouts, in 2021" },
+    { "group": "hitters-2009", "field": "sb", "direction": "over", "limit": 15, "prompt": "Name a hitter with over 15 stolen bases, in 2009" }
+  ]
+}

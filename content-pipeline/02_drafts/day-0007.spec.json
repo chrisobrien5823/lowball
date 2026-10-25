@@ -1,0 +1,11 @@
+{
+  "day": 7,
+  "theme": "Team Sheet 2",
+  "questions": [
+    { "group": "teams-2016", "field": "w", "direction": "over", "limit": 90, "prompt": "Name a team with over 90 wins, in 2016" },
+    { "group": "teams-2015", "field": "r", "direction": "under", "limit": 700, "prompt": "Name a team that scored under 700 runs, in 2015" },
+    { "group": "teams-2019", "field": "hr", "direction": "over", "limit": 260, "prompt": "Name a team that hit over 260 home runs, in 2019" },
+    { "group": "teams-2014", "field": "attendance", "direction": "under", "limit": 2750000, "prompt": "Name a team with home attendance under 2,750,000, in 2014" },
+    { "group": "teams-2013", "field": "sb", "direction": "over", "limit": 120, "prompt": "Name a team with over 120 stolen bases, in 2013" }
+  ]
+}

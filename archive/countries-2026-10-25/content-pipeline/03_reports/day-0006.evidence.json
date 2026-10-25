@@ -1,0 +1,467 @@
+{
+  "day": 6,
+  "theme": "Small Wonders",
+  "instructions": "Fill secondSource for every check, and add adversarial findings. See .claude/skills/verify-day/SKILL.md.",
+  "questions": [
+    {
+      "id": "d6q1",
+      "prompt": "Name a country with a population under 40,000",
+      "field": "population",
+      "unit": "people",
+      "source": "World Bank, Population, total (SP.POP.TOTL), 2023",
+      "checks": [
+        {
+          "id": "LIE",
+          "name": "Liechtenstein",
+          "value": 39846,
+          "secondSource": {
+            "value": 39993,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "MCO",
+          "name": "Monaco",
+          "value": 38956,
+          "secondSource": {
+            "value": 31597,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "MHL",
+          "name": "Marshall Islands",
+          "value": 38827,
+          "secondSource": {
+            "value": 80966,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "KNA",
+          "name": "Saint Kitts and Nevis",
+          "value": 46758,
+          "secondSource": {
+            "value": 54817,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "DMA",
+          "name": "Dominica",
+          "value": 66510,
+          "secondSource": {
+            "value": 74656,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        },
+        {
+          "id": "AND",
+          "name": "Andorra",
+          "value": 80856,
+          "secondSource": {
+            "value": 85468,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "membership",
+          "text": "Vatican City is the textbook answer to 'a country with a population under 40,000' and to d6q2 'smaller than 500 km²'. The prompt just says 'a country', but Vatican City is rejected with 'not covered by World Bank data'. Players will feel cheated on both questions.",
+          "suggestion": "Reword d6q1 and d6q2 to 'Name a UN member state with...' (or add 'Vatican City doesn't count' to the prompt), and change the reason to \"Vatican City is a UN observer state, not a UN member, so it doesn't count here.\"",
+          "blocking": true
+        }
+      ]
+    },
+    {
+      "id": "d6q2",
+      "prompt": "Name a country smaller than 500 km²",
+      "field": "area_km2",
+      "unit": "km²",
+      "source": "World Bank, Surface area (AG.SRF.TOTL.K2), 2023",
+      "checks": [
+        {
+          "id": "AND",
+          "name": "Andorra",
+          "value": 468,
+          "secondSource": {
+            "value": 468,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "PLW",
+          "name": "Palau",
+          "value": 459,
+          "secondSource": {
+            "value": 459,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "SYC",
+          "name": "Seychelles",
+          "value": 457,
+          "secondSource": {
+            "value": 457,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "LCA",
+          "name": "Saint Lucia",
+          "value": 616,
+          "secondSource": {
+            "value": 616,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "FSM",
+          "name": "Micronesia",
+          "value": 701,
+          "secondSource": {
+            "value": 702,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "SGP",
+          "name": "Singapore",
+          "value": 734,
+          "secondSource": {
+            "value": 734,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "ATG",
+          "name": "Antigua and Barbuda",
+          "value": 440,
+          "secondSource": {
+            "value": 442,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        },
+        {
+          "id": "BRB",
+          "name": "Barbados",
+          "value": 430,
+          "secondSource": {
+            "value": 431,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": []
+    },
+    {
+      "id": "d6q3",
+      "prompt": "Name a country with a GDP under $700 million",
+      "field": "gdp_usd",
+      "unit": "US$",
+      "source": "World Bank, GDP (NY.GDP.MKTP.CD), 2023",
+      "checks": [
+        {
+          "id": "STP",
+          "name": "São Tomé and Príncipe",
+          "value": 690456807,
+          "secondSource": {
+            "value": 696000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          }
+        },
+        {
+          "id": "DMA",
+          "name": "Dominica",
+          "value": 659311111,
+          "secondSource": {
+            "value": 659000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          }
+        },
+        {
+          "id": "TON",
+          "name": "Tonga",
+          "value": 591139734,
+          "secondSource": {
+            "value": 599000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          }
+        },
+        {
+          "id": "WSM",
+          "name": "Samoa",
+          "value": 1044909500,
+          "secondSource": {
+            "value": 1045000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          }
+        },
+        {
+          "id": "KNA",
+          "name": "Saint Kitts and Nevis",
+          "value": 1055651852,
+          "secondSource": {
+            "value": 1034000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          }
+        },
+        {
+          "id": "VCT",
+          "name": "Saint Vincent and the Grenadines",
+          "value": 1072237037,
+          "secondSource": {
+            "value": 1047000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": []
+    },
+    {
+      "id": "d6q4",
+      "prompt": "Name a country with a life expectancy over 84.5 years",
+      "field": "life_expectancy",
+      "unit": "years",
+      "source": "World Bank, Life expectancy at birth, total (SP.DYN.LE00.IN), 2023",
+      "checks": [
+        {
+          "id": "LIE",
+          "name": "Liechtenstein",
+          "value": 84.6,
+          "secondSource": {
+            "value": 83.8,
+            "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_mlexpec?geo=LI&sex=T&age=Y_LT1&time=2023&unit=YR&format=JSON",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "SMR",
+          "name": "San Marino",
+          "value": 85.7,
+          "secondSource": {
+            "value": null,
+            "url": "",
+            "title": "",
+            "year": null
+          }
+        },
+        {
+          "id": "MCO",
+          "name": "Monaco",
+          "value": 86.4,
+          "secondSource": {
+            "value": null,
+            "url": "",
+            "title": "",
+            "year": null
+          }
+        },
+        {
+          "id": "CHE",
+          "name": "Switzerland",
+          "value": 84.2,
+          "secondSource": {
+            "value": 83.8,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "AND",
+          "name": "Andorra",
+          "value": 84,
+          "secondSource": {
+            "value": null,
+            "url": "",
+            "title": "",
+            "year": null
+          }
+        },
+        {
+          "id": "JPN",
+          "name": "Japan",
+          "value": 84,
+          "secondSource": {
+            "value": 83.9,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "ESP",
+          "name": "Spain",
+          "value": 83.9,
+          "secondSource": {
+            "value": 83.3,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "ITA",
+          "name": "Italy",
+          "value": 83.4,
+          "secondSource": {
+            "value": 82.9,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "KOR",
+          "name": "South Korea",
+          "value": 83.4,
+          "secondSource": {
+            "value": 83.6,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        },
+        {
+          "id": "MLT",
+          "name": "Malta",
+          "value": 83.4,
+          "secondSource": {
+            "value": 82.5,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": []
+    },
+    {
+      "id": "d6q5",
+      "prompt": "Name a country with a GDP per person over $100,000",
+      "field": "gdp_per_capita_usd",
+      "unit": "US$",
+      "source": "World Bank, GDP per capita (NY.GDP.PCAP.CD), 2023",
+      "checks": [
+        {
+          "id": "CHE",
+          "name": "Switzerland",
+          "value": 104450,
+          "secondSource": {
+            "value": 105725,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "IRL",
+          "name": "Ireland",
+          "value": 106819,
+          "secondSource": {
+            "value": 105704,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "LUX",
+          "name": "Luxembourg",
+          "value": 133231,
+          "secondSource": {
+            "value": 134403,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "NOR",
+          "name": "Norway",
+          "value": 90984,
+          "secondSource": {
+            "value": 90755,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "SGP",
+          "name": "Singapore",
+          "value": 86383,
+          "secondSource": {
+            "value": 86383,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        },
+        {
+          "id": "USA",
+          "name": "United States",
+          "value": 82587,
+          "secondSource": {
+            "value": 82579,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          }
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "ambiguous-wording",
+          "text": "'GDP per person over $100,000' is where the nominal-vs-PPP ambiguity (see d1q4) really bites. Singapore and Qatar are well over $100k in widely quoted PPP rankings but well under it nominally, so a player who reads it as PPP busts with one of the most famous 'richest country' answers.",
+          "suggestion": "Reword to 'Name a country with a nominal GDP per person over $100,000 (current US$)'.",
+          "blocking": true
+        }
+      ]
+    }
+  ]
+}

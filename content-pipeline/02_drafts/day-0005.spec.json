@@ -1,0 +1,11 @@
+{
+  "day": 5,
+  "theme": "Deep Bench",
+  "questions": [
+    { "group": "pitchers-2008", "field": "p_so", "direction": "over", "limit": 120, "prompt": "Name a pitcher with over 120 strikeouts, in 2008" },
+    { "group": "hitters-2022", "field": "rbi", "direction": "under", "limit": 60, "prompt": "Name a hitter with under 60 RBI, in 2022" },
+    { "group": "pitchers-2017", "field": "p_w", "direction": "under", "limit": 7, "prompt": "Name a pitcher with under 7 wins, in 2017" },
+    { "group": "hitters-2024", "field": "h", "direction": "over", "limit": 140, "prompt": "Name a hitter with over 140 hits, in 2024" },
+    { "group": "hitters-2000", "field": "hr", "direction": "under", "limit": 20, "prompt": "Name a hitter with under 20 home runs, in 2000" }
+  ]
+}

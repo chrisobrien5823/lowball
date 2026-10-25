@@ -1,0 +1,623 @@
+{
+  "day": 4,
+  "date": "2026-11-04",
+  "theme": "Latin Rhythm",
+  "emoji": "💃",
+  "finalizedAt": "2026-10-24T16:02:10.116Z",
+  "status": "flagged",
+  "questions": [
+    {
+      "id": "d4q1",
+      "prompt": "Name a Latin American or Caribbean country with a population under 7 million",
+      "direction": "under",
+      "limit": 7000000,
+      "unit": "people",
+      "format": "int",
+      "source": "World Bank, Population, total (SP.POP.TOTL), 2023",
+      "groupLabel": "a Latin American or Caribbean country",
+      "best": {
+        "name": "Paraguay",
+        "value": 6844146,
+        "score": 98
+      },
+      "checks": [
+        {
+          "id": "PRY",
+          "name": "Paraguay",
+          "value": 6844146,
+          "secondSource": {
+            "value": 7439863,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "NIC",
+          "name": "Nicaragua",
+          "value": 6823613,
+          "secondSource": {
+            "value": 6359689,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 6.8%, without changing the result."
+        },
+        {
+          "id": "SLV",
+          "name": "El Salvador",
+          "value": 6309624,
+          "secondSource": {
+            "value": 6602370,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 4.6%, without changing the result."
+        },
+        {
+          "id": "HND",
+          "name": "Honduras",
+          "value": 10644851,
+          "secondSource": {
+            "value": 9571352,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 10.1%, without changing the result."
+        },
+        {
+          "id": "CUB",
+          "name": "Cuba",
+          "value": 11019931,
+          "secondSource": {
+            "value": 10985974,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "DOM",
+          "name": "Dominican Republic",
+          "value": 11331265,
+          "secondSource": {
+            "value": 10790744,
+            "url": "https://web.archive.org/web/20231201111134/https://www.cia.gov/the-world-factbook/field/population/country-comparison/",
+            "title": "The World Factbook: Population - Country Comparison (archived snapshot of 1 Dec 2023; all listed values are '2023 est.')",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 4.8%, without changing the result."
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "missing-answer",
+          "text": "French Guiana, Martinique, Guadeloupe, Falkland Islands/Malvinas, Anguilla, Montserrat, Bonaire and Saint Barthelemy are unrecognized (0, no reason), and all are small-population Latin American/Caribbean places. Bare 'Guiana' even fuzzy-matches Guyana. Puerto Rico and other territories are handled correctly.",
+          "suggestion": "Add extras: French Guiana/Martinique/Guadeloupe (\"an overseas department of France\"), Falkland Islands with aliases Falklands/Malvinas (\"a British Overseas Territory\"), Anguilla/Montserrat (\"a British Overseas Territory\"), Bonaire (\"part of the Netherlands\"), Saint Barthelemy (\"a French overseas collectivity\").",
+          "blocking": false,
+          "resolution": "Added these places with reasons; the player can try again."
+        },
+        {
+          "kind": "missing-alias",
+          "text": "'Salvador' (common shorthand for El Salvador, ~6.3M, a valid answer) is unrecognized.",
+          "suggestion": "Add alias \"Salvador\" to SLV.",
+          "blocking": false,
+          "resolution": "Added alias Salvador. Covered by tests/content.test.mjs."
+        }
+      ],
+      "flags": [
+        "Paraguay: The second source puts this answer on the other side of the line."
+      ],
+      "status": "flagged"
+    },
+    {
+      "id": "d4q2",
+      "prompt": "Name a Latin American or Caribbean country with a total area over 1 million km²",
+      "direction": "over",
+      "limit": 1000000,
+      "unit": "km²",
+      "format": "int",
+      "source": "World Bank, Surface area (AG.SRF.TOTL.K2), 2023",
+      "groupLabel": "a Latin American or Caribbean country",
+      "best": {
+        "name": "Bolivia",
+        "value": 1098580,
+        "score": 91
+      },
+      "checks": [
+        {
+          "id": "BOL",
+          "name": "Bolivia",
+          "value": 1098580,
+          "secondSource": {
+            "value": 1098581,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "COL",
+          "name": "Colombia",
+          "value": 1140619,
+          "secondSource": {
+            "value": 1141748,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "PER",
+          "name": "Peru",
+          "value": 1285216,
+          "secondSource": {
+            "value": 1285216,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "VEN",
+          "name": "Venezuela",
+          "value": 912050,
+          "secondSource": {
+            "value": 929690,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "CHL",
+          "name": "Chile",
+          "value": 757245,
+          "secondSource": {
+            "value": 756102,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "PRY",
+          "name": "Paraguay",
+          "value": 406752,
+          "secondSource": {
+            "value": 406752,
+            "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/documents/dyb2023/table03.pdf",
+            "title": "Demographic Yearbook 2023, Table 3: Population by sex, annual rate of population change, surface area and density",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d4q3",
+      "prompt": "Name a Latin American or Caribbean country with a life expectancy over 78 years",
+      "direction": "over",
+      "limit": 78,
+      "unit": "years",
+      "format": "dec1",
+      "source": "World Bank, Life expectancy at birth, total (SP.DYN.LE00.IN), 2023",
+      "groupLabel": "a Latin American or Caribbean country",
+      "best": {
+        "name": "Cuba",
+        "value": 78.1,
+        "score": 100
+      },
+      "checks": [
+        {
+          "id": "CUB",
+          "name": "Cuba",
+          "value": 78.1,
+          "secondSource": {
+            "value": 77.2,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "URY",
+          "name": "Uruguay",
+          "value": 78.1,
+          "secondSource": {
+            "value": 77.1,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "PAN",
+          "name": "Panama",
+          "value": 79.6,
+          "secondSource": {
+            "value": 79.3,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "COL",
+          "name": "Colombia",
+          "value": 77.7,
+          "secondSource": {
+            "value": 78.2,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "PER",
+          "name": "Peru",
+          "value": 77.7,
+          "secondSource": {
+            "value": 78.4,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "ATG",
+          "name": "Antigua and Barbuda",
+          "value": 77.6,
+          "secondSource": {
+            "value": 78.4,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "ARG",
+          "name": "Argentina",
+          "value": 77.4,
+          "secondSource": {
+            "value": 77.2,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "ECU",
+          "name": "Ecuador",
+          "value": 77.4,
+          "secondSource": {
+            "value": 77.6,
+            "url": "https://ghoapi.azureedge.net/api/WHOSIS_000001?$filter=Dim1 eq 'SEX_BTSX' and SpatialDimType eq 'COUNTRY'",
+            "title": "Life expectancy at birth (years), both sexes (indicator WHOSIS_000001)",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [],
+      "flags": [
+        "Cuba: The second source puts this answer on the other side of the line.",
+        "Uruguay: The second source puts this answer on the other side of the line.",
+        "Colombia: The second source puts this answer on the other side of the line.",
+        "Peru: The second source puts this answer on the other side of the line.",
+        "Antigua and Barbuda: The second source puts this answer on the other side of the line."
+      ],
+      "status": "flagged"
+    },
+    {
+      "id": "d4q4",
+      "prompt": "Name a Latin American or Caribbean country with a nominal GDP per person under $5,000",
+      "direction": "under",
+      "limit": 5000,
+      "unit": "US$",
+      "format": "usd",
+      "source": "World Bank, GDP per capita (NY.GDP.PCAP.CD), 2023",
+      "groupLabel": "a Latin American or Caribbean country",
+      "best": {
+        "name": "Bolivia",
+        "value": 4275,
+        "score": 86
+      },
+      "checks": [
+        {
+          "id": "BOL",
+          "name": "Bolivia",
+          "value": 4275,
+          "secondSource": {
+            "value": 4306,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "VEN",
+          "name": "Venezuela",
+          "value": 3617,
+          "secondSource": {
+            "value": 2712,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "minor",
+          "blocking": false,
+          "why": "Sources differ by 25.0%, without changing the result."
+        },
+        {
+          "id": "HND",
+          "name": "Honduras",
+          "value": 3227,
+          "secondSource": {
+            "value": 3227,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "SLV",
+          "name": "El Salvador",
+          "value": 5320,
+          "secondSource": {
+            "value": 5320,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "SUR",
+          "name": "Suriname",
+          "value": 5522,
+          "secondSource": {
+            "value": 5434,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "GTM",
+          "name": "Guatemala",
+          "value": 5754,
+          "secondSource": {
+            "value": 5754,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+            "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [],
+      "flags": [],
+      "status": "clear"
+    },
+    {
+      "id": "d4q5",
+      "prompt": "Name a Latin American or Caribbean country with a nominal GDP over $100 billion",
+      "direction": "over",
+      "limit": 100000000000,
+      "unit": "US$",
+      "format": "usd-big",
+      "source": "World Bank, GDP (NY.GDP.MKTP.CD), 2023",
+      "groupLabel": "a Latin American or Caribbean country",
+      "best": {
+        "name": "Venezuela",
+        "value": 102377501186,
+        "score": 98
+      },
+      "checks": [
+        {
+          "id": "VEN",
+          "name": "Venezuela",
+          "value": 102377501186,
+          "secondSource": {
+            "value": 76762000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "disagree",
+          "blocking": true,
+          "why": "The second source puts this answer on the other side of the line."
+        },
+        {
+          "id": "GTM",
+          "name": "Guatemala",
+          "value": 104298081429,
+          "secondSource": {
+            "value": 104283000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "DOM",
+          "name": "Dominican Republic",
+          "value": 120456239154,
+          "secondSource": {
+            "value": 120794000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "scores",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "CRI",
+          "name": "Costa Rica",
+          "value": 87512637056,
+          "secondSource": {
+            "value": 87524000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "PAN",
+          "name": "Panama",
+          "value": 83812155200,
+          "secondSource": {
+            "value": 83812000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        },
+        {
+          "id": "URY",
+          "name": "Uruguay",
+          "value": 79208725900,
+          "secondSource": {
+            "value": 79214000000,
+            "url": "https://www.imf.org/external/datamapper/api/v1/NGDPD",
+            "title": "World Economic Outlook database (DataMapper): GDP, current prices (NGDPD), billions of U.S. dollars",
+            "year": 2023
+          },
+          "side": "bust",
+          "agreement": "agree",
+          "blocking": false,
+          "why": ""
+        }
+      ],
+      "adversarial": [
+        {
+          "kind": "missing-alias",
+          "text": "'Dominican' fuzzy-matches Dominica (1 edit), not the Dominican Republic, and 'Dom Rep' is unrecognized. The Dominican Republic (~$120B) is a valid answer to 'GDP over $100 billion', but a player who types 'Dominican' is scored as Dominica (~$0.6B) and busts.",
+          "suggestion": "Add aliases to DOM: \"Dominican\", \"Dom Rep\", \"DR\", \"Dominican Rep\".",
+          "blocking": false,
+          "resolution": "Added aliases Dominican, Dom Rep and Dominican Rep. Covered by tests/content.test.mjs."
+        }
+      ],
+      "flags": [
+        "Venezuela: The second source puts this answer on the other side of the line."
+      ],
+      "status": "flagged"
+    }
+  ]
+}

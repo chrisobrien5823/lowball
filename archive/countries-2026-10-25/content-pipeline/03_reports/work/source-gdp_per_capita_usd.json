@@ -1,0 +1,153 @@
+{
+  "field": "gdp_per_capita_usd",
+  "source": {
+    "title": "World Economic Outlook database: GDP per capita, current prices (U.S. dollars per capita), indicator NGDPDPC",
+    "publisher": "International Monetary Fund",
+    "url": "https://www.imf.org/external/datamapper/api/v1/NGDPDPC?periods=2023",
+    "year": 2023,
+    "independentOf": "IMF WEO figures are compiled by IMF staff from national authorities' data and Article IV work, with the IMF's own exchange-rate and population series; this is a separate compilation from the World Bank WDI (NY.GDP.PCAP.CD), not a republication of it."
+  },
+  "values": {
+    "DMA": {
+      "value": 8853
+    },
+    "JAM": {
+      "value": 7755
+    },
+    "MHL": {
+      "value": 6553
+    },
+    "VCT": {
+      "value": 9433
+    },
+    "DOM": {
+      "value": 11280
+    },
+    "MUS": {
+      "value": 11273
+    },
+    "GRD": {
+      "value": 11619
+    },
+    "FIN": {
+      "value": 53017
+    },
+    "DEU": {
+      "value": 55256
+    },
+    "SWE": {
+      "value": 54872
+    },
+    "FRA": {
+      "value": 44807
+    },
+    "MLT": {
+      "value": 41732
+    },
+    "ITA": {
+      "value": 39282
+    },
+    "BEL": {
+      "value": 55435
+    },
+    "AUT": {
+      "value": 56764
+    },
+    "DZA": {
+      "value": 5353
+    },
+    "LBY": {
+      "value": 6017
+    },
+    "ZAF": {
+      "value": 6133
+    },
+    "CPV": {
+      "value": 4913
+    },
+    "NAM": {
+      "value": 4274
+    },
+    "TUN": {
+      "value": 3980
+    },
+    "BOL": {
+      "value": 4306
+    },
+    "VEN": {
+      "value": 2712
+    },
+    "HND": {
+      "value": 3227
+    },
+    "SLV": {
+      "value": 5320
+    },
+    "SUR": {
+      "value": 5434
+    },
+    "GTM": {
+      "value": 5754
+    },
+    "MYS": {
+      "value": 12107
+    },
+    "MDV": {
+      "value": 16637
+    },
+    "CHN": {
+      "value": 13029
+    },
+    "THA": {
+      "value": 7211
+    },
+    "MNG": {
+      "value": 5780
+    },
+    "IRN": {
+      "value": 4940
+    },
+    "CHE": {
+      "value": 105725
+    },
+    "IRL": {
+      "value": 105704
+    },
+    "LUX": {
+      "value": 134403
+    },
+    "NOR": {
+      "value": 90755
+    },
+    "SGP": {
+      "value": 86383
+    },
+    "USA": {
+      "value": 82579
+    },
+    "GNB": {
+      "value": 1035
+    },
+    "TCD": {
+      "value": 1040
+    },
+    "LSO": {
+      "value": 963
+    },
+    "UGA": {
+      "value": 1151
+    },
+    "MLI": {
+      "value": 1045
+    },
+    "ETH": {
+      "value": 1549
+    },
+    "RWA": {
+      "value": 1097
+    },
+    "GMB": {
+      "value": 858
+    }
+  }
+}
